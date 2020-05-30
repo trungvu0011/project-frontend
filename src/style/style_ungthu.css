@@ -1,0 +1,168 @@
+/*ungthu__top*/
+
+.coverUngThu{
+  position: relative;
+  width: 1518px;
+  height: 600px;
+  }
+  
+  .coverUngThu img{
+    position: absolute;
+    height: 500px;
+
+    right: 0px;
+    top: 120px;
+  }
+
+  .textUngThu{
+    position: absolute;
+  width: 454px;
+  height: 104px;
+  left: 50px;
+  top: 150px;
+  
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 45px;
+  line-height: normal;
+  text-align: center;
+  }
+  
+  .textChamSoc{
+    position: absolute;
+    width: 430px;
+    height: 58px;
+    left: 50px;
+    top: 270px;
+    
+    font-family: Montserrat;
+    font-weight: 200;
+    font-size: 24px;
+    line-height: normal;
+    text-transform: uppercase;
+  }
+  
+  .gachduoiDieuDuong{
+  position: absolute;
+  width: 360px;
+  height: 8px;
+  left: 50px;
+  top: 380px;
+  
+  background: #405DF5;
+  }
+  
+  .textGiaUngThu{
+    position: absolute;
+  width: 360px;
+  height: 60px;
+  left: 50px;
+  top: 450px;
+  
+  font-family: Montserrat;
+  font-weight: bold;
+  font-size: 40px;
+  text-transform: uppercase;
+  
+  color: #405DF5;
+  }
+
+  .textKhamTaiNha{
+    position: absolute;
+    width: 320px;
+    height: 58px;
+    left: 70px;
+    top: 415px;
+    
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: normal;
+    text-transform: uppercase;
+    
+  }
+
+  .buttonHenKham_UngThu{
+    position: absolute;
+    left: 50px;
+    top: -80px;
+  
+    color: black;
+    text-align: center;
+    font-size: 15px;
+  }
+  
+  /*ungthu__top*/
+
+  /*ungthu__content*/
+
+  .textXetNghiemUngThu{
+    position: relative;
+  width: 850px;
+  height: 72px;
+  left: 25px;
+  top: 30px;
+  
+  font-weight: bold;
+  font-family: Roboto;
+  
+  font-size: 40px;
+  }
+  
+  .gachduoiKQ{
+    position: relative;
+  width: 600px;
+  height: 8px;
+  left: 25px;
+  top: 20px;
+  
+  background: #405DF5;
+  }
+
+  .text_giaithich{
+    position: absolute;
+    width: 1400px;
+    height: 500px;
+    left: 25px;
+    top: 800px;
+  }
+  
+.cacloaiungthu{
+  position: absolute;
+  height: 500px;
+  left: 150px;
+  top: 200px;
+}
+  
+.dauhieuditruyen{
+  position: absolute;
+  height: 1050px;
+  left: 50px;
+  top: 200px;
+}
+
+.row .col .card{
+  position: relative;
+  width: 500px;
+  height: 810px;
+}
+  
+.card-header{
+    font-family: Roboto;
+    font-weight: 500;
+    font-size: 28px;
+    line-height: normal;
+    font-weight: bold;
+}
+
+.card-img-top{
+    width: 500px;
+    height:  300px;
+    margin-bottom: 20px;
+}
+
+#ungthu__content{
+  overflow: hidden;
+}

@@ -1,0 +1,31 @@
+#salary-info{
+    padding-top: 100px;
+}
+
+#salary-info h2{
+    justify-content: center;
+}
+
+#salary-info ul{
+    font-size: 20px;
+    line-height: 40px;
+}
+
+table th, table td{
+    line-height: 5px;
+    padding: 0 0 0 0 ;
+}
+#salary-table thead tr{
+    text-align: center;
+}
+
+#salary-table thead tr #describe{
+    width: 500px;
+}
+
+#salary-table thead tr #into-money{
+    vertical-align: middle;
+    width: 30%;
+    font-size: 20px;
+}
+

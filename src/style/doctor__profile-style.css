@@ -1,0 +1,62 @@
+#doctor-profile-top{
+    margin: 120px -10px 50px 0;
+}
+
+
+#doctor-profile-top .row .col{
+    padding: 3cm 1cm 0 5cm;
+}
+#doctor-profile-top .row .col a{
+    font-size: 20px;
+}
+
+#doctor-profile-top .row .col button{
+    justify-content: center;
+    margin: 20px 0 20px 60px;
+}
+
+#doctor-profile-top div div img{
+    width: auto;
+    height: 500px;
+    border-top-left-radius: 400px;
+    border-bottom-left-radius: 400px;
+}
+
+#doctor-profile-mid{
+    background-color: #E4EAF6;
+    padding: 50px 0 15px 0;
+    margin-bottom: 15px;
+}
+
+#doctor-profile-mid > div{
+    margin-bottom: 30px;
+    margin-left: 30px;
+}
+
+#doctor-profile-mid .row .col {
+    padding: 0;
+}
+
+#doctor-profile-mid .row .col .card{
+    width: 240px;
+    height: 200px;
+    justify-content: center;
+}
+
+#doctor-experience:not(h1){
+font-size: 25px;
+}
+
+#doctor-experience > div{
+    margin-left: 50px;
+    margin-bottom: 50px;
+}
+
+#doctor-feedback > div{
+    background-color:#3FF2BC;
+    padding: 20px 30px 20px 30px;
+}
+
+#doctor-feedback > div h2{
+    margin-left: 20px;
+}

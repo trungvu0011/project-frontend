@@ -1,0 +1,44 @@
+#top-doctors-section{
+    padding-top: 2cm
+}
+
+#top-doctors-section .row .col{
+    padding: 3cm 1cm 0 5cm;
+}
+
+#top-doctors-section .row .col h1{
+    padding-left: 3cm;
+}
+
+#doctor-lookup{
+    background-color: #E4EAF6;
+}
+
+#doctor-lookup .col .row .col .card{
+    width: 420px;
+}
+
+#doctor-lookup .col .row .col .card img{
+    width: 360px;
+    padding-top: 20px;
+    align-self: center;
+}
+
+#doctor-lookup > div > button {
+    color: black;
+    border-radius: 50px;
+    width: 370px;
+}
+
+#doctor-experience div li{
+    background: linear-gradient(180deg, rgba(5, 97, 158, 0.82) 0%, rgba(196, 196, 196, 0) 62.43%, rgba(102, 147, 177, 0.253591) 100%);
+    padding: 20px 0px 20px 40px;
+    border-radius: 20px;   
+    margin-top: 40px;
+    font-weight: 500 ;
+    height: 100px;
+}
+
+#doctor-experience div li img, #doctor-experience div li span{
+    align-self: center;
+}

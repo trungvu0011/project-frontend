@@ -1,0 +1,63 @@
+#service-top{
+    margin-top: 140px;
+    overflow: hidden;
+}
+
+#service-top > div{
+   justify-content: center;
+}
+
+#service-top > div > div{
+    align-self: center;
+    margin-left: 25px;
+    justify-content: center;
+
+    line-height: 80px;
+}
+
+#service-top .rectangle{
+  width: 350px;
+  height: 10px;
+
+  margin-top: 50px;
+  background: #405DF5;
+}
+
+#service-top .bg{
+  float: right;
+    
+  overflow: auto;
+  border-radius: 25px;
+}
+
+.dichvuthamkham{
+
+    margin: 30px 0 30px 0;
+
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 40px;
+    line-height: normal;
+    text-align: center;
+
+}
+
+#service-content{
+    background-color: #E4EAF6;
+    padding-top: 5px;
+    padding-bottom: 50px;
+    overflow: hidden;
+}
+
+#service-content .card{
+    background-color:#3FF2BC;
+    text-align: center;
+    width: 320px;
+    margin-left: 90px;
+}
+
+#service-content .card .btn{
+    color: #000000;
+    font-weight: bold;
+}

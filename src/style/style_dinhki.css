@@ -1,0 +1,152 @@
+/*#dinhki__head*/
+
+.coverDinhKi{
+     position: relative;
+     width: 1519px;
+     height: 500px;
+    
+}
+
+.coverDinhKi img{
+  position: absolute;
+  right: 0px;
+  top:120px;
+}
+  
+  .textDinhKi{
+    position: absolute;
+  width: 454px;
+  height: 104px;
+  left: 50px;
+  top: 150px;
+  
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 45px;
+  line-height: normal;
+  text-align: center;
+}
+  
+  .textChamSoc{
+    position: absolute;
+  width: 430px;
+  height: 58px;
+  left: 50px;
+  top: 300px;
+  
+  font-family: Montserrat;
+  font-weight: 200;
+  font-size: 24px;
+  line-height: normal;
+  text-transform: uppercase;
+}
+  
+  .gachduoiDinhKi{
+  position: absolute;
+  width: 400px;
+  height: 8px;
+  left: 50px;
+  top: 270px;
+  
+  background: #405DF5;
+  }
+  
+  .textGiaKhamDinhKi{
+    position: absolute;
+  width: 360px;
+  height: 58px;
+  left: 50px;
+  top: 395px;
+  
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 40px;
+  line-height: normal;
+  text-transform: uppercase;
+  
+  color: #405DF5;
+  }
+
+  .textKhamTaiNha{
+    position: absolute;
+    width: 320px;
+    height: 58px;
+    left: 100px;
+    top: 365px;
+    
+    font-family: Montserrat;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: normal;
+    text-transform: uppercase;
+}
+
+
+  .buttonHenKham_DinhKi{
+
+    position: absolute;
+    left: 60px;
+    top: -50px;
+  
+    color: black;
+    padding: 15px 25px;
+    text-align: center;
+    font-size: 15px;
+  }
+  
+  /*#dinhki__head*/
+
+  /*#dinhki__content*/
+  .textGhiChuKetQua{
+    position: relative;
+  width: 750px;
+  height: 70px;
+  left: 25px;
+  top: 0px;
+  
+  font-weight: bold;
+  font-family: Roboto;
+  
+  font-size: 40px;
+}
+  
+.gachduoiKQ{
+    position: relative;
+  width: 700px;
+  height: 8px;
+  left: 25px;
+  top: 10px;
+  
+  background: #405DF5;
+}
+  
+
+  .khamlamsang{
+    position: absolute;
+    height: 500px;
+    left: 150px;
+    top: 50px;
+  }
+  
+  .xetnghiem{
+    position: absolute;
+    height: 500px;
+    left: 20px;
+    top: 50px;
+  }
+  
+  .card-header{
+    text-align: left;
+  
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+#dinhki__content .card{
+  width: 500px;
+}

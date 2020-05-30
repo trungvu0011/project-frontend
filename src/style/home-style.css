@@ -1,0 +1,87 @@
+#nav-bar, #service-section, #home-top, #home-profit1, #home-profit2, #top-doctors-section{
+    overflow: hidden;
+}
+
+#signin-out-gr-button{
+   
+}
+
+#home-top-bkgrd{
+    background-image:url(img/background/hcare1.jpg) ; 
+    background-position: center center;
+    background-size: cover; 
+    height:"750px";
+}
+
+#home-top-bkgrd .container{
+    padding: 300px 0px 100px 100px;
+}
+
+#home-top-bkgrd .container .col div h1{
+   text-transform: uppercase; 
+   color: aliceblue;
+}
+
+#home-top-bkgrd .container .col .row ul .btn {
+    background:linear-gradient(
+    59.45deg, #79BCD1 100%, #5E9DB1 51.38%, #2589A8 0%); 
+    border-radius: 15px;
+
+}
+
+#home-top-bkgrd .container .col .row ul div{
+    color: white; text-shadow: black;
+}
+
+#home-profit1-bkgrd{
+    background-image:url(img/background/profit.png) ;
+    background-position: center center;
+    background-size: cover;
+    height:650px;
+}
+
+#home-profit1-bkgrd > div{
+    padding-top: 2cm;
+}
+
+#home-profit1-bkgrd div.container{
+    padding: 1cm 10cm 0 0;   
+}
+
+#home-profit2 img{
+    align-self: center;
+    width:35px;
+    height:35px;
+}
+
+#home-profit2-bkgrd {
+    background-image:url(img/background/profit1.png) ;
+    background-position: center center;
+    background-size: cover; 
+    height:780px; position: relative;
+}
+
+#home-profit2-bkgrd > div {
+    padding: 0cm 3cm 0 12cm; position: abolute;
+}
+
+#home-profit2-bkgrd div #hp2-text{
+    padding-top: 5cm; 
+    position: abolute;
+}
+
+#top-doctors-section > div > .container{
+   padding: 4cm 1cm 0 3cm;
+}
+
+
+#service-section div .container{
+   padding: 3cm 3cm 0 0;
+}
+
+footer > div{
+    background-color:#1A2456; 
+    color:#fff;
+}
+
+

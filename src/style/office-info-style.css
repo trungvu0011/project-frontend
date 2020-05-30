@@ -1,0 +1,23 @@
+#doctor-booking {
+    padding-bottom: 50px;
+}
+#doctor-booking img{
+    margin-top:110px;
+}
+
+#doctor-booking > .row > .col{
+    padding-left: 80px;
+}
+
+#doctor-booking > div > .col{
+    padding-top: 150px;
+}
+
+#doctor-booking > div{
+    padding-right:  0;
+    margin-right: 0;
+}
+
+#doctor-booking > div > div{
+    line-height: 40px;
+}
