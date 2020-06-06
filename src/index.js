@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
+
 import Navbar from './app/components/user/common_element/navbar';
 import Home from './app/components/user/home';
 import DoctorBooking from './app/components/user/doctor_booking';

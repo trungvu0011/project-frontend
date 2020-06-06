@@ -109,7 +109,8 @@ export default class DoctorBooking extends Component {
                 // };
                 // this.addSelectEvent(obj);
                 const modal = document.getElementById('booking_room_modal');
-                modal.modal('show');
+                console.log(modal);
+                //modal.modal('show')
         },
         });
 
