@@ -1,26 +1,48 @@
 import React from 'react';
 import Popup from "reactjs-popup";
 
+import Home from '../../../components/user/home'
+import DoctorBooking from '../../../components/user/doctor_booking';
+import Services from '../../../components/user/services';
+import Pediatrics from '../../../components/user/service_detail/pediatrics'
+import Periodic from '../../../components/user/service_detail/periodic'
+import Nursing from '../../../components/user/service_detail/nursing'
+import Generality from '../../../components/user/service_detail/generality'
+import CancerScreening from '../../../components/user/service_detail/cancer_screening'
+import Doctors from '../../../components/user/doctors';
+import Dashboard from '../../../components/admin/dashboard';
+import PersonnelManagement from '../../../components/admin/personnel_management';
+import OrderApproving from '../../../components/admin/order_approving';
+
 import '../../../../css/form-style.css';
 import '../../../../css/home-style.css';
 import logo from '../../../../assets/logo/small-logo.png';
 import menuIcon from '../../../../assets/png/experience-icon.png';
 import careService from '../../../../assets/svg/care-service.svg';
 import medicine from '../../../../assets/png/medicine-thumb.png';
-import scope from '../../../../assets/png/stethoscope-thumb.png'
-import SignInModal from './sign-in-modal'
+import scope from '../../../../assets/png/stethoscope-thumb.png';
+
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
 function Navbar() {
   return (
     <div>
+       <Router>
+            
+                {/* <Redirect from="/" to="/maps"/> */}
       <section id="nav-bar">
         <nav id="collapsibleNav" className="navbar-expand-lg fixed-top">
           <nav className="container-fluid navbar navbar-expand navbar-light bg-white">
             {/*logo*/}
             <div className="navbar-brand">
-              <a title="We Care You" href="/">
+              <Link title="We Care You" to="/home">
                 <img src={logo} alt="logo" />
-              </a>
+              </Link>
             </div>
             {/*toggle button*/}
             <button className="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNav" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
@@ -30,36 +52,37 @@ function Navbar() {
             <div className="collapse navbar-collapse narbar">
               <ul className="pl-5 navbar-nav mr-auto">
                 <li className="nav-item">
-                  <a className="nav-link" title="Trang Chủ" href="/">
+                  <Link className="nav-link" title="Trang Chủ" to="/home">
                     <span className="menu-icon">
                       <img src={menuIcon} alt="hinh anh" />
                     </span>
                     <span>Trang chủ</span>
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" title="Dịch Vụ" href='/services'>
+                  <Link className="nav-link" title="Dịch Vụ"  to="/services">
                     <span className="menu-icon">
                       <img src={careService} alt="hinh anh" />
                     </span>
                     <span>Dịch vụ</span>
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" title="Thông Tin Phòng Khám" href="/">
+                  <Link className="nav-link" title="Thông Tin Phòng Khám" to="/doctor-booking">
                     <span className="menu-icon">
                       <img src={medicine} alt="hinh anh" />
+                
                     </span>
                     <span>Thông Tin Phòng Khám</span>
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" title="Đội Ngũ Bác Sĩ" href="/doctors">
+                  <Link className="nav-link" title="Đội Ngũ Bác Sĩ" to="/doctors">
                     <span className="menu-icon">
                       <img src={scope} alt="hinh anh" />
                     </span>
                     <span>Đội Ngũ Bác Sĩ</span>
-                  </a>
+                  </Link>
                 </li>
               </ul>
               <div className="btn-toolbar mb-1">
@@ -73,7 +96,8 @@ function Navbar() {
                           </h3>
                           <div className="modal-body mx-4">
                             {/*Body*/}
-                            <div className="md-form mb-5">
+                            
+                             <div className="md-form mb-5">
                               <h4> Đăng nhập bằng tài khoản</h4>
                               <input type="email" id="Form-email1" className="form-control validate" />
                             </div>
@@ -94,7 +118,7 @@ function Navbar() {
                               <button type="button" className="btn btn-white btn-rounded z-depth-1a">
                                 <i className="fab fa-google-plus-g" />
                               </button>
-                            </div>
+                            </div> 
                           </div>
                         </div>
                       </div>
@@ -190,6 +214,21 @@ function Navbar() {
           </div>
         </nav>
       </section>
+      <Switch>
+                <Route path="/home" >
+                  <Home/>
+                </Route>
+                <Route path="/services" >
+                  <Services/>
+                </Route>
+                <Route path="/doctor-booking" >
+                  <DoctorBooking/>
+                </Route>
+                <Route path="/doctors" >
+                  <Doctors/>
+                </Route>
+      </Switch>
+      </Router>
     </div>
   );
 }

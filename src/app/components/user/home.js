@@ -16,6 +16,8 @@ import international from '../../../assets/png/international-icon.png';
 import scopeThumnb from '../../../assets/png/stethoscope-thumb.png';
 import doctor from '../../../assets/background/doctor.png';
 import serviceBG from '../../../assets/background/service-bg.PNG';
+import Navbar from './common_element/navbar';
+import Footer from './common_element/footer';
 
 function Body() {
   return (
@@ -258,8 +260,9 @@ function Body() {
           </div>
         </div>
       </section>
+      <Footer/>
     </div>
-
+    
   )
 }
 
