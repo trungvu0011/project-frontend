@@ -246,7 +246,7 @@ function Navbar() {
             <div className="collapse navbar-collapse narbar">
               <ul className="pl-5 navbar-nav mr-auto">
                 <li className="nav-item">
-                  <Link className="nav-link" title="Trang Chủ" to="/home">
+                  <Link className="nav-link" title="Trang Chủ" to="/home" exact>
                     <span className="menu-icon">
                       <img src={menuIcon} alt="hinh anh" />
                     </span>
@@ -254,7 +254,7 @@ function Navbar() {
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" title="Dịch Vụ"  to="/services">
+                  <Link className="nav-link" title="Dịch Vụ"  to="/services" exact>
                     <span className="menu-icon">
                       <img src={careService} alt="hinh anh" />
                     </span>
@@ -262,7 +262,7 @@ function Navbar() {
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" title="Thông Tin Phòng Khám" to="/doctor-booking">
+                  <Link className="nav-link" title="Thông Tin Phòng Khám" to="/doctor-booking"exact >
                     <span className="menu-icon">
                       <img src={medicine} alt="hinh anh" />
                     </span>
@@ -270,7 +270,7 @@ function Navbar() {
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" title="Đội Ngũ Bác Sĩ" to="/doctors">
+                  <Link className="nav-link" title="Đội Ngũ Bác Sĩ" to="/doctors" exact>
                     <span className="menu-icon">
                       <img src={scope} alt="hinh anh" />
                     </span>

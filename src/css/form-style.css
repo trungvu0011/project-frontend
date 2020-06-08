@@ -59,5 +59,8 @@
     margin-bottom: 0px;
 }
 
+.signup-btn, .signin-btn{
+    border:none;
+}
 
 

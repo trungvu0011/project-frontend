@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 import Navbar from './app/components/user/common_element/navbar';
 import Home from './app/components/user/home';
