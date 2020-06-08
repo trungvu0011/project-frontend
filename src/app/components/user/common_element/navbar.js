@@ -109,7 +109,7 @@ function Navbar() {
             {/* Đăng nhập button */}
             <div className="btn-toolbar mb-1">
               <div className="btn-group mr-2">
-                <Popup modal trigger={<button className="btn btn-light btn-sm rounded-bottom"><b>Đăng Nhập</b></button>}>
+                <Popup modal trigger={<button className="btn btn-light btn-sm rounded-bottom signin-btn"><b>Đăng Nhập</b></button>}>
                   <div>
                     <div className="modal-content form-elegant">
                       <div className="text-center">
@@ -148,7 +148,7 @@ function Navbar() {
               </div>
               
               <div className="btn-group">
-                <Popup modal trigger={<button className="btn btn-light btn-sm rounded-bottom" ><b>Đăng Ký</b></button>}>
+                <Popup modal trigger={<button className="btn btn-light btn-sm rounded-bottom signup-btn" ><b>Đăng Ký</b></button>}>
                   {/*Content*/}
                   <div className="modal-content form-elegant">
                     {/*Header*/}

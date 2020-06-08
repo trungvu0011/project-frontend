@@ -1,0 +1,21 @@
+.booking-section{
+    color: #696969;
+    margin: 8rem 4rem 3rem;
+}
+
+.calendar-container{
+    padding-left: 3.5rem;
+    margin-left: 5rem;
+    border-left: 1px solid #696969;
+
+}
+
+.select-doctor{
+    width: 15.2rem !important;
+    margin-top: 2rem !important;
+}
+
+.fc-title{
+    font-size: 0.9rem !important;
+    font-weight: 400;
+}
