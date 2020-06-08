@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import '../../../../css/style_dieuduong.css';
+//import '../../../../css/style_dieuduong.css';
 export default class nursing extends Component {
     render() {
         return (

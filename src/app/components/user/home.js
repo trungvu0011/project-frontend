@@ -211,7 +211,7 @@ function Body() {
           </div>
         </div>
       </section>
-      <section id="top-doctors-section">
+      <section id="doctors-section">
         <div className="row container-fluid">
           <div className="container col">
             <h2>Đội Ngũ Bác Sĩ Chuyên Khoa Thân Thiện Giàu Kinh Nghiệm</h2>
@@ -238,7 +238,7 @@ function Body() {
       <section id="service-section">
         <div className="row container-fluid">
           <div className="col"><img src={serviceBG} alt="Service" /></div>
-          <div className="container col">
+          <div className="col" style={{marginTop: '10rem'}}>
             <h3>Bạn Thấy Không Khỏe?    <br /><b>Hãy Để Chúng Tôi Chăm Sóc Bạn</b></h3>
             <p>Mang trải nghiệm thăm khám đa khoa hiện đại đến ngay trong ngôi nhà thân yêu của bạn.
           Từ cảm thông thường đến các bệnh mãn tính, các bác sĩ WeCareYou luôn sẵn sàng chăm sóc tận tình, chu đáo cho bạn &amp; gia đình.</p>
@@ -260,7 +260,6 @@ function Body() {
           </div>
         </div>
       </section>
-      <Footer/>
     </div>
     
   )

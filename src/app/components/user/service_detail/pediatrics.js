@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import '../../../../css/style_nhikhoa.css';
+//import '../../../../css/style_nhikhoa.css';
 
 export default class pediatrics extends Component {
     render() {

@@ -10,6 +10,7 @@ import axios from 'axios';
 import '../../../css/booking-modal.css';
 import "react-datepicker/dist/react-datepicker.css";
 import vi from 'date-fns/locale/vi';
+import { preventDefault } from '@fullcalendar/core';
 
 export default class BookingModal extends Component {
     modal = React.createRef();
@@ -40,7 +41,6 @@ export default class BookingModal extends Component {
                 value: null,
                 id: null,
             },
-            showModal: false,
             order_id: null,
             reason: '',
             start: new Date(),
@@ -62,10 +62,9 @@ export default class BookingModal extends Component {
 
     componentDidMount() {
         let end = this.state.end;
-        end = end.setTime(end.getTime() + (60 * 60 * 1000));
 
         this.setState({
-            end: end
+            end: new Date(end.setTime(end.getTime() + (60 * 60 * 1000)))
         })
     }
 
@@ -77,9 +76,13 @@ export default class BookingModal extends Component {
     }
 
     createOrder = (value, actions) => {
-        let start = value.start.setTime(value.start.getTime() + (7*60 * 60 * 1000));
+        if(value.reason.trim() === ''){
+            return;
+        }
 
-        let end = new Date(value.end);
+        let start = this.state.start.setTime(this.state.start.getTime() + (7*60 * 60 * 1000));
+
+        let end = new Date(this.state.end);
         end = end.setTime(end.getTime() + (7*60 * 60 * 1000));
         
         let now = new Date();
@@ -89,11 +92,10 @@ export default class BookingModal extends Component {
                 reason: value.reason,
                 startTime: new Date(start),
                 endTime: new Date(end),
-                doctorId: value.doctor.id,
+                doctorId: this.state.selectedDoctor.id,
                 creatorId: 1,
                 createdTime: new Date(now) 
         }
-        console.log(data)
 
         axios
             .post('https://final-wcy-backend.herokuapp.com/orders', data)
@@ -107,9 +109,17 @@ export default class BookingModal extends Component {
             });
     }
 
+    handleChangeStartFormik = date => {
+        this.setState({
+            start: new Date(date),
+            end: date.setTime(date.getTime() + (60 * 60 * 1000))
+        })
+    }
+
     render() {
         const { reason, start, end, selectedDoctor } = this.state;
         const _this = this;
+
         return (
             <div>
                 <Modal
@@ -124,12 +134,12 @@ export default class BookingModal extends Component {
                         <Modal.Title id="order-modal">
                             Đặt bác sĩ
                     </Modal.Title>
-                    </Modal.Header>
+                    </Modal.Header> 
                     <Modal.Body>
                         <Formik
                             initialValues={{
                                 doctor: selectedDoctor,
-                                reason: '',
+                                reason: null,
                                 start: start,
                                 end: end
                             }}
@@ -160,17 +170,22 @@ export default class BookingModal extends Component {
                                         <Form.Group controlId="order_doctor_id">
                                             <Form.Label>Bác sĩ</Form.Label>
                                             <Select className='select-doctor__modal'
-                                                value={values.doctor.id}
+                                                defaultValue={selectedDoctor}
                                                 onChange={handleChange}
                                                 options={selectedDoctor}
                                                 isDisabled isSearchable
+                                                name='doctor'
+                                                placeholder='Chọn bác sĩ'
                                             />
                                         </Form.Group>
                                         <Form.Group controlId="order_reason">
                                             <Form.Label>Lý do khám bệnh*</Form.Label>
                                             <Form.Control as="textarea" rows="3" type='text'
                                                 onChange={handleChange}
-                                                // value={values.reason}
+                                                value={values.reason}
+                                                name='reason'
+                                                required
+                                                placeholder='Vui lòng nhập lý do khám'
                                             />
                                         </Form.Group>
                                         <Form.Row>
@@ -178,14 +193,16 @@ export default class BookingModal extends Component {
                                                 <Form.Label>Bắt đầu*</Form.Label>
                                                 <DatePicker
                                                     className='select-start form-control'
-                                                    onChange={handleChange}
-                                                    selected={values.start}
-                                                    value={values.start}
+                                                    onChange={_this.handleChangeStartFormik}
+                                                    selected={start}
+                                                    value={start}
                                                     locale={vi} 
+                                                    showTimeSelect
                                                     timeFormat="HH:mm"
                                                     timeIntervals={15}
                                                     timeCaption="Giờ"
                                                     dateFormat="d MMMM, yyyy h:mm aa"
+                                                    name='start' required
                                                 />
                                             </Form.Group>
 
@@ -194,20 +211,21 @@ export default class BookingModal extends Component {
                                                 <DatePicker
                                                     className='select-end form-control'
                                                     onChange={handleChange}
-                                                    selected={values.end}
-                                                    value={values.end}
+                                                    selected={end}
+                                                    value={end}
                                                     locale={vi} 
+                                                    showTimeSelect
                                                     timeFormat="HH:mm"
                                                     timeIntervals={15}
                                                     timeCaption="Giờ"
                                                     dateFormat="d MMMM, yyyy h:mm aa"
                                                     disabled
+                                                    name='end'
                                                 />
                                             </Form.Group>
                                         </Form.Row>
                                             <Modal.Footer>
-                                                <Button variant="primary" type="submit" disabled={isSubmitting}  
-                                                onClick={() => _this.createOrder(values)}>Đặt bác sĩ</Button>
+                                                <input type='submit' className='btn btn-primary' value='Đặt bác sĩ'  />
                                                 <Button variant="dark-outline" onClick={_this.props.onHide} >Đóng</Button>
                                             </Modal.Footer>
                                     </Form>

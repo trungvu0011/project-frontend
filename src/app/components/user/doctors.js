@@ -13,7 +13,6 @@ class Doctors extends Component {
     render() {
         return (
             <div>
-            <div>
                 <section id="top-doctors-section" >
                     <div className="row container-fluid" >
                         <div className="col">
@@ -172,8 +171,7 @@ class Doctors extends Component {
                         </li>
                     </div>
                 </section>
-            </div>
-            <Footer/>
+
             </div>
         )
     }

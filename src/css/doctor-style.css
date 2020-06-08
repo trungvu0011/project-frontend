@@ -1,10 +1,7 @@
 #top-doctors-section{
-    padding-top: 2cm
+    margin-top: 8rem;
 }
 
-#top-doctors-section .row .col{
-    padding: 3cm 1cm 0 5cm;
-}
 
 #top-doctors-section .row .col h1{
     padding-left: 3cm;

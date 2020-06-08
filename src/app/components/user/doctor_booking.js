@@ -183,7 +183,7 @@ export default class DoctorBooking extends Component {
                                     selected={miniStartDate}
                                     onChange={this.handleChangeDate}
                                     inline
-                                    locale={vi}
+                                    locale={vi} 
                                 />
                                 <Select className='select-doctor'
                                     value={selectedDoctor}

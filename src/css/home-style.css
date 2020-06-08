@@ -1,10 +1,7 @@
-#nav-bar, #service-section, #home-top, #home-profit1, #home-profit2, #top-doctors-section{
+#nav-bar, #service-section, #home-top, #home-profit1, #home-profit2, #doctors-section{
     overflow: hidden;
 }
 
-#signin-out-gr-button{
-
-}
 
 #home-profit2 img{
     width: 3rem;
@@ -75,7 +72,7 @@
     position: abolute;
 }
 
-#top-doctors-section > div > .container{
+#doctors-section > div > .container{
     padding: 4cm 1cm 0 3cm;
 }
 

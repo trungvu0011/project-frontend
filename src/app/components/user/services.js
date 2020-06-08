@@ -39,7 +39,7 @@ class Services extends Component {
                             <div className="card">
                                 <img src={Pediatrics} className="card-img-top" alt="card-img" />
                                 <div className="card-body">
-                                    <h5 className="card-title">Nhi khoa<b>300.000đ</b></h5>
+                                    <h5 className="card-title col"><div>Nhi khoa</div><b>300.000đ</b></h5>
                                     <a href="/services/pediatrics" className="btn btn-info">TÌM HIỂU THÊM</a>
                                 </div>
                             </div>
@@ -49,7 +49,7 @@ class Services extends Component {
                             <div className="card">
                                 <img src={Periodic} className="card-img-top" alt="..." />
                                 <div className="card-body">
-                                    <h5 className="card-title">Khám định kì<b>700.000đ</b></h5>
+                                    <h5 className="card-title col"><div>Khám định kì</div>Khám định kì<b>700.000đ</b></h5>
                                     <a href="/services/periodic" className="btn btn-info">TÌM HIỂU THÊM</a>
                                 </div>
                             </div>
@@ -59,7 +59,7 @@ class Services extends Component {
                             <div className="card">
                                 <img src={Generality} className="card-img-top" alt="..." />
                                 <div className="card-body">
-                                    <h5 className="card-title">Khám tổng quát<b>1.000.000đ</b></h5>
+                                    <h5 className="card-title col"><div>Khám tổng quát</div><b>1.000.000đ</b></h5>
                                     <a href="/services/generality" className="btn btn-info">TÌM HIỂU THÊM</a>
                                 </div>
                             </div>
@@ -71,7 +71,7 @@ class Services extends Component {
                             <div className="card">
                                 <img src={Nursing} className="card-img-top" alt="..." />
                                 <div className="card-body">
-                                    <h5 className="card-title">Điều dưỡng<b>300.000đ</b></h5>
+                                    <h5 className="card-title col"><div>Điều dưỡng</div><b>300.000đ</b></h5>
                                     <a href="/services/nursing" className="btn btn-info">TÌM HIỂU THÊM</a>
                                 </div>
                             </div>
@@ -81,7 +81,7 @@ class Services extends Component {
                             <div className="card">
                                 <img src={CancerScreening} className="card-img-top" alt="..." />
                                 <div className="card-body">
-                                    <h5 className="card-title">Tầm soát ung thư<b>700.000đ</b></h5>
+                                    <h5 className="card-title col"><div>Tầm soát ung thư</div><b>700.000đ</b></h5>
                                     <a href="/services/cancerscreening" className="btn btn-info">TÌM HIỂU THÊM</a>
                                 </div>
                             </div>
