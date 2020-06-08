@@ -6,10 +6,8 @@ import experience from '../../../assets/png/experience-icon.png'
 import degree from '../../../assets/png/degree-icon.png';
 import international from '../../../assets/png/international-icon.png';
 import multilingual from '../../../assets/png/multilingual-icon.png';
-import Footer from './common_element/footer';
-import Navbar from './common_element/navbar';
-class Doctors extends Component {
 
+class Doctors extends Component {
     render() {
         return (
             <div>
@@ -24,7 +22,7 @@ class Doctors extends Component {
                         </h4>
                         </div>
 
-                        <div className="row"><img src={Doctor} /></div>
+                        <div className="row"><img src={Doctor} alt='doctor img'/></div>
                     </div>
                 </section>
 
