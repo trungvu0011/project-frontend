@@ -28,58 +28,55 @@ import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Router>
-            <Navbar />
-
-            <Switch>
-                <Route path="/" exact>
-                  <Home/>
-                </Route> 
-                <Route path="/services" exact>
-                  <Services/>
-                </Route>
-                <Route path="/doctors" exact>
-                  <Doctors/>
-                </Route>
-                <Route path="/doctor-booking" exact>
-                  <DoctorBooking/>
-                </Route>
-                <Route path="/services/pediatrics" exact>
-                  <Pediatrics/>
-                </Route>
-                <Route path="/services/periodic" exact>
-                  <Periodic/>
-                </Route>
-                <Route path="/services/nursing" exact>
-                  <Nursing/>
-                </Route>
-                <Route path="/services/generality" exact>
-                  <Generality/>
-                </Route>
-                <Route path="/services/cancerscreening" exact>
-                  <CancerScreening/>
-                </Route>
-                <Route path="/admin/dashboard" exact>
-                  <Dashboard/>
-                </Route>
-                <Route path="/admin/order-approving" exact>
-                  <OrderApproving/>
-                </Route>
-                <Route path="/admin/personnel-management" exact>
-                  <PersonnelManagement/>
-                </Route>
-                
-                {/* <Redirect from="/" to="/maps"/> */}
-            </Switch>
-
-            <Footer/>
-        </Router>
-    
+    <Navbar/>
+    <Home/>
+    <Footer/>
   </React.StrictMode>,
   document.getElementById('root')
 );
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();
+// <Router>
+//             <Navbar />
+//             <Switch>
+//                 <Route path="/" exact>
+//                   <Home/>
+//                 </Route> 
+//                 <Route path="/services" >
+//                   <Services/>
+//                 </Route>
+//                 <Route path="/doctors" >
+//                   <Doctors/>
+//                 </Route>
+//                 <Route path="/doctor-booking" >
+//                   <DoctorBooking/>
+//                 </Route>
+//                 <Route path="/services/pediatrics" >
+//                   <Pediatrics/>
+//                 </Route>
+//                 <Route path="/services/periodic" >
+//                   <Periodic/>
+//                 </Route>
+//                 <Route path="/services/nursing" >
+//                   <Nursing/>
+//                 </Route>
+//                 <Route path="/services/generality" >
+//                   <Generality/>
+//                 </Route>
+//                 <Route path="/services/cancerscreening" >
+//                   <CancerScreening/>
+//                 </Route>
+//                 <Route path="/admin/dashboard" >
+//                   <Dashboard/>
+//                 </Route>
+//                 <Route path="/admin/order-approving" >
+//                   <OrderApproving/>
+//                 </Route>
+//                 <Route path="/admin/personnel-management" >
+//                   <PersonnelManagement/>
+//                 </Route>
+                
+//                 {/* <Redirect from="/" to="/maps"/> */}
+//             </Switch>
+//             <Footer/>
+//         </Router>
