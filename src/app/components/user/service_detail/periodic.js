@@ -37,18 +37,18 @@ export default class periodic extends Component {
                         <div class="khamlamsang col">
                             <div class="card">
                                 <div class="card-header ">
-                                    <img src="resource/LAMSANG.png" /> Khám lâm sàng
+                                    <img src="resource/LAMSANG.png" alt=''/> Khám lâm sàng
                 </div>
 
                                 <div class="card-body">
-                                    <h6> <img src="resource/tick.png" /> KIỂM TRA SINH HIỆU</h6>
-                                    <h6> <img src="resource/tick.png" /> KHÁM CƠ XƯƠNG KHỚP</h6>
-                                    <h6> <img src="resource/tick.png" /> XEM TIỂU SỬ BỆNH ÁN</h6>
-                                    <h6> <img src="resource/tick.png" /> KIỂM TRA TIM VÀ PHỔI</h6>
-                                    <h6> <img src="resource/tick.png" /> KIỂM TRA ĐẦU VÀ CỔ</h6>
-                                    <h6> <img src="resource/tick.png" /> CHỈ SỐ TRỌNG LƯỢNG CƠ THỂ (BMI)</h6>
-                                    <h6> <img src="resource/tick.png" /> KIỂM TRA CHẾ ĐỘ DINH DƯỠNG &amp; SINH HOẠT</h6>
-                                    <h6> <img src="resource/tick.png" /> TƯ VẤN</h6>
+                                    <h6> <img src="resource/tick.png" alt='tick' /> KIỂM TRA SINH HIỆU</h6>
+                                    <h6> <img src="resource/tick.png" alt='tick' /> KHÁM CƠ XƯƠNG KHỚP</h6>
+                                    <h6> <img src="resource/tick.png" alt='tick' /> XEM TIỂU SỬ BỆNH ÁN</h6>
+                                    <h6> <img src="resource/tick.png" alt='tick' /> KIỂM TRA TIM VÀ PHỔI</h6>
+                                    <h6> <img src="resource/tick.png" alt='tick' /> KIỂM TRA ĐẦU VÀ CỔ</h6>
+                                    <h6> <img src="resource/tick.png" alt='tick' /> CHỈ SỐ TRỌNG LƯỢNG CƠ THỂ (BMI)</h6>
+                                    <h6> <img src="resource/tick.png" alt='tick' /> KIỂM TRA CHẾ ĐỘ DINH DƯỠNG &amp; SINH HOẠT</h6>
+                                    <h6> <img src="resource/tick.png" alt='tick' /> TƯ VẤN</h6>
                                 </div>
                             </div>
                         </div>
@@ -57,17 +57,17 @@ export default class periodic extends Component {
 
                             <div class="card">
                                 <div class="card-header ">
-                                    <img src="resource/XETNGHIEM.png" /> Xét nghiệm </div>
+                                    <img src="resource/XETNGHIEM.png" alt=''/> Xét nghiệm </div>
 
                                 <div class="card-body">
-                                    <h6> <img src="resource/tick.png" /> CÔNG THỨC MÁU</h6>
-                                    <h6> <img src="resource/tick.png" /> LƯỢNG MỠ TRONG MÁU</h6>
-                                    <h6> <img src="resource/tick.png" /> TẦM SOÁT ĐÁI THÁO ĐƯỜNG</h6>
-                                    <h6> <img src="resource/tick.png" /> LƯỢNG PROTEIN</h6>
-                                    <h6> <img src="resource/tick.png" /> ALBUMIN</h6>
-                                    <h6> <img src="resource/tick.png" /> Urê và Creatinine (Chức năng Thận)</h6>
-                                    <h6> <img src="resource/tick.png" /> Axit Uric và xét nghiệm nước tiểu</h6>
-                                    <h6> <img src="resource/tick.png" /> SGOT và SGPT</h6>
+                                    <h6> <img src="resource/tick.png" alt='tick' /> CÔNG THỨC MÁU</h6>
+                                    <h6> <img src="resource/tick.png" alt='tick' /> LƯỢNG MỠ TRONG MÁU</h6>
+                                    <h6> <img src="resource/tick.png" alt='tick' /> TẦM SOÁT ĐÁI THÁO ĐƯỜNG</h6>
+                                    <h6> <img src="resource/tick.png" alt='tick' /> LƯỢNG PROTEIN</h6>
+                                    <h6> <img src="resource/tick.png" alt='tick' /> ALBUMIN</h6>
+                                    <h6> <img src="resource/tick.png" alt='tick' /> Urê và Creatinine (Chức năng Thận)</h6>
+                                    <h6> <img src="resource/tick.png" alt='tick' /> Axit Uric và xét nghiệm nước tiểu</h6>
+                                    <h6> <img src="resource/tick.png" alt='tick' /> SGOT và SGPT</h6>
                                 </div>
                             </div>
                         </div>

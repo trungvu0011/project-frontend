@@ -5,16 +5,31 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 
 import Navbar from './app/components/user/common_element/navbar';
 import Footer from './app/components/user/common_element/footer';
-import Dashboard from './app/components/admin/dashboard';
-import PersonnelManagement from './app/components/admin/personnel_management';
-import OrderApproving from './app/components/admin/order_approving';
-
+import AdminNavbar from './app/components/admin/admin-navbar';
 import * as serviceWorker from './serviceWorker';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect
+} from "react-router-dom";
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <Navbar/>
-    <Footer/>
+    <Router>
+      <Switch>      
+        <Route path='/home' exact>
+          <Navbar/>
+          <Footer/>
+        </Route>
+        <Route path="/admin/order-approving" exact>
+          <AdminNavbar/>
+        </Route>
+        <Redirect from='/admin' to="/admin/order-approving" />
+        <Redirect from='/' to="/home" />
+      </Switch>
+    </Router>
   </React.StrictMode>,
   document.getElementById('root')
 );
@@ -50,8 +65,6 @@ serviceWorker.unregister();
 //                 <Route path="/services/cancerscreening" >
 //                   <CancerScreening/>
 //                 </Route>
-//                 <Route path="/admin/dashboard" >
-//                   <Dashboard/>
 //                 </Route>
 //                 <Route path="/admin/order-approving" >
 //                   <OrderApproving/>

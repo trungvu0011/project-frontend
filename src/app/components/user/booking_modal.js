@@ -10,7 +10,6 @@ import axios from 'axios';
 import '../../../css/booking-modal.css';
 import "react-datepicker/dist/react-datepicker.css";
 import vi from 'date-fns/locale/vi';
-import { preventDefault } from '@fullcalendar/core';
 
 export default class BookingModal extends Component {
     modal = React.createRef();
@@ -80,11 +79,8 @@ export default class BookingModal extends Component {
             return;
         }
 
-        let start = this.state.start.setTime(this.state.start.getTime() + (7*60 * 60 * 1000));
-
-        let end = new Date(this.state.end);
-        end = end.setTime(end.getTime() + (7*60 * 60 * 1000));
-        
+        let start = this.state.start;
+        let end = this.state.end;  
         let now = new Date();
         now = now.setTime(now.getTime() + (7*60 * 60 * 1000));
 
@@ -117,7 +113,7 @@ export default class BookingModal extends Component {
     }
 
     render() {
-        const { reason, start, end, selectedDoctor } = this.state;
+        const { start, end, selectedDoctor } = this.state;
         const _this = this;
 
         return (

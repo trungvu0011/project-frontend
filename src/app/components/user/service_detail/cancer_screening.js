@@ -44,24 +44,24 @@ export default class cancer_screening extends Component {
                         <div class="cacloaiungthu col">
                             <div class="card">
                                 <div class="card-header ">
-                                    <img class="card-img-top" src="resource/cacloaiungthu.png" alt="Card image cap" />
-                                    <img src="resource/LAMSANG.png" />Các loại ung thư
+                                    <img class="card-img-top" src="resource/cacloaiungthu.png" alt="Card cap" />
+                                    <img src="resource/LAMSANG.png" alt=''/>Các loại ung thư
                                 </div>
 
                                 <div class="card-body">
-                                    <h6> <img src="resource/tick.png" /> Ngực &amp; Buồng trứng</h6>
-                                    <h6> <img src="resource/tick.png" /> Tuyến tiền liệt</h6>
-                                    <h6> <img src="resource/tick.png" /> Gan</h6>
-                                    <h6> <img src="resource/tick.png" /> Tuyến tuỵ</h6>
-                                    <h6> <img src="resource/tick.png" /> Tử cung</h6>
-                                    <h6> <img src="resource/tick.png" /> Đại trực tràng</h6>
-                                    <h6> <img src="resource/tick.png" /> Dạ dày</h6>
-                                    <h6> <img src="resource/tick.png" /> Tuyến giáp</h6>
-                                    <h6> <img src="resource/tick.png" /> U ác tính</h6>
-                                    <h6> <img src="resource/tick.png" /> Bạch cầu</h6>
-                                    <h6> <img src="resource/tick.png" /> Não</h6>
-                                    <h6> <img src="resource/tick.png" /> Thận</h6>
-                                    <h6> <img src="resource/tick.png" /> Thần kinh</h6>
+                                    <h6> <img src="resource/tick.png" alt='tick' /> Ngực &amp; Buồng trứng</h6>
+                                    <h6> <img src="resource/tick.png" alt='tick' /> Tuyến tiền liệt</h6>
+                                    <h6> <img src="resource/tick.png" alt='tick' /> Gan</h6>
+                                    <h6> <img src="resource/tick.png" alt='tick' /> Tuyến tuỵ</h6>
+                                    <h6> <img src="resource/tick.png" alt='tick' /> Tử cung</h6>
+                                    <h6> <img src="resource/tick.png" alt='tick' /> Đại trực tràng</h6>
+                                    <h6> <img src="resource/tick.png" alt='tick' /> Dạ dày</h6>
+                                    <h6> <img src="resource/tick.png" alt='tick' /> Tuyến giáp</h6>
+                                    <h6> <img src="resource/tick.png" alt='tick' /> U ác tính</h6>
+                                    <h6> <img src="resource/tick.png" alt='tick' /> Bạch cầu</h6>
+                                    <h6> <img src="resource/tick.png" alt='tick' /> Não</h6>
+                                    <h6> <img src="resource/tick.png" alt='tick' /> Thận</h6>
+                                    <h6> <img src="resource/tick.png" alt='tick' /> Thần kinh</h6>
                                 </div>
                             </div>
                         </div>
@@ -70,21 +70,21 @@ export default class cancer_screening extends Component {
 
                             <div class="card">
                                 <div class="card-header ">
-                                    <img class="card-img-top" src="resource/dauhieuungthu.jpg" alt="Card image cap" />
-                                    <img src="resource/XETNGHIEM.png" /> Xét nghiệm
+                                    <img class="card-img-top" src="resource/dauhieuungthu.jpg" alt="Card cap" />
+                                    <img src="resource/XETNGHIEM.png" alt=''/> Xét nghiệm
                                 </div>
 
                                 <div class="card-body">
-                                    <h6> <img src="resource/tick.png" /> BRCA 1 &amp; BRCA2</h6>
-                                    <h6> <img src="resource/tick.png" /> STK-11</h6>
-                                    <h6> <img src="resource/tick.png" /> PALB2</h6>
-                                    <h6> <img src="resource/tick.png" /> VLH</h6>
-                                    <h6> <img src="resource/tick.png" /> RB1</h6>
-                                    <h6> <img src="resource/tick.png" /> RET</h6>
-                                    <h6> <img src="resource/tick.png" /> CDH1</h6>
-                                    <h6> <img src="resource/tick.png" /> TP 53</h6>
-                                    <h6> <img src="resource/tick.png" /> PTEN</h6>
-                                    <h6> <img src="resource/tick.png" /> MLH1, MSH2, MSH6, PMS2, EPCAM</h6>
+                                    <h6> <img src="resource/tick.png" alt='tick' /> BRCA 1 &amp; BRCA2</h6>
+                                    <h6> <img src="resource/tick.png" alt='tick' /> STK-11</h6>
+                                    <h6> <img src="resource/tick.png" alt='tick' /> PALB2</h6>
+                                    <h6> <img src="resource/tick.png" alt='tick' /> VLH</h6>
+                                    <h6> <img src="resource/tick.png" alt='tick' /> RB1</h6>
+                                    <h6> <img src="resource/tick.png" alt='tick' /> RET</h6>
+                                    <h6> <img src="resource/tick.png" alt='tick' /> CDH1</h6>
+                                    <h6> <img src="resource/tick.png" alt='tick' /> TP 53</h6>
+                                    <h6> <img src="resource/tick.png" alt='tick' /> PTEN</h6>
+                                    <h6> <img src="resource/tick.png" alt='tick' /> MLH1, MSH2, MSH6, PMS2, EPCAM</h6>
                                 </div>
                             </div>
                         </div>

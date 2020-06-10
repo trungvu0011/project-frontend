@@ -37,18 +37,18 @@ export default class pediatrics extends Component {
                             <div className="card">
                                 <div className="card-header">
                                     <div className="row">
-                                        <img src="resource/binhsua.png" />
+                                        <img src="resource/binhsua.png" alt=''/>
                                         <div className="col align-self-center"> Bài kiểm tra sơ sinh <br /> dành cho trẻ dưới 1 tuổi</div></div>
                                 </div>
 
                                 <div className="card-body">
-                                    <h6> <img src="resource/tick.png" /> ĐÁNH GIÁ PHÁT TRIỂN THỂ CHẤT</h6>
-                                    <h6> <img src="resource/tick.png" /> HƯỚNG DẪN MASSAGE</h6>
-                                    <h6> <img src="resource/tick.png" /> ĐÁNH GIÁ DINH DƯỠNG</h6>
-                                    <h6> <img src="resource/tick.png" /> HƯỚNG DẪN RỬA MŨI</h6>
-                                    <h6> <img src="resource/tick.png" /> ĐÁNH GIÁ VÀNG DA SƠ SINH</h6>
-                                    <h6> <img src="resource/tick.png" />/> KHÁM CUỐN RỐN</h6>
-                                    <h6> <img src="resource/tick.png" /> THU THẬP SINH HIỆU</h6>
+                                    <h6> <img src="resource/tick.png" alt='tick' /> ĐÁNH GIÁ PHÁT TRIỂN THỂ CHẤT</h6>
+                                    <h6> <img src="resource/tick.png" alt='tick' /> HƯỚNG DẪN MASSAGE</h6>
+                                    <h6> <img src="resource/tick.png" alt='tick' /> ĐÁNH GIÁ DINH DƯỠNG</h6>
+                                    <h6> <img src="resource/tick.png" alt='tick' /> HƯỚNG DẪN RỬA MŨI</h6>
+                                    <h6> <img src="resource/tick.png" alt='tick' /> ĐÁNH GIÁ VÀNG DA SƠ SINH</h6>
+                                    <h6> <img src="resource/tick.png" alt='tick' />/> KHÁM CUỐN RỐN</h6>
+                                    <h6> <img src="resource/tick.png" alt='tick' /> THU THẬP SINH HIỆU</h6>
                                 </div>
                             </div>
                         </div>
@@ -57,16 +57,16 @@ export default class pediatrics extends Component {
                             <div className="card">
                                 <div className="card-header">
                                     <div className="row">
-                                        <img src="resource/binhsua.png" />
+                                        <img src="resource/binhsua.png" alt=''/>
                                         <div className="col align-self-center"> Khám trẻ lớn<br /> Giành cho trẻ 2 đến 15 tuổi</div></div>
                                 </div>
                                 <div className="card-body">
-                                    <h6> <img src="resource/tick.png" /> KHÁM THỂ CHẤT TOÀN DIỆN</h6>
-                                    <h6> <img src="resource/tick.png" /> KHẢ NĂNG NGHE, NÓI, NHÌN</h6>
-                                    <h6> <img src="resource/tick.png" /> ĐÁNH GIÁ TĂNG TRƯỞNG &amp; PHÁT TRIỂN</h6>
-                                    <h6> <img src="resource/tick.png" /> KHÁM TÂM LÝ</h6>
-                                    <h6> <img src="resource/tick.png" /> TƯ VẤN LỊCH CHÍCH NGỪA</h6>
-                                    <h6> <img src="resource/tick.png" /> KHẢ NĂNG TÂM LÝ &amp; KĨ NĂNG MỀM</h6>
+                                    <h6> <img src="resource/tick.png" alt='tick' /> KHÁM THỂ CHẤT TOÀN DIỆN</h6>
+                                    <h6> <img src="resource/tick.png" alt='tick' /> KHẢ NĂNG NGHE, NÓI, NHÌN</h6>
+                                    <h6> <img src="resource/tick.png" alt='tick' /> ĐÁNH GIÁ TĂNG TRƯỞNG &amp; PHÁT TRIỂN</h6>
+                                    <h6> <img src="resource/tick.png" alt='tick' /> KHÁM TÂM LÝ</h6>
+                                    <h6> <img src="resource/tick.png" alt='tick' /> TƯ VẤN LỊCH CHÍCH NGỪA</h6>
+                                    <h6> <img src="resource/tick.png" alt='tick' /> KHẢ NĂNG TÂM LÝ &amp; KĨ NĂNG MỀM</h6>
                                 </div>
                             </div>
                         </div>
@@ -75,15 +75,15 @@ export default class pediatrics extends Component {
                             <div className="card">
                                 <div className="card-header">
                                     <div className="row">
-                                        <img src="resource/binhsua.png" />
+                                        <img src="resource/binhsua.png" alt=''/>
                                         <div className="col align-self-center"> Khám tổng quát<br />Khi con yêu bạn bị ốm</div></div>
                                 </div>
                                 <div className="card-body">
-                                    <h6> <img src="resource/tick.png" /> KIỂM TRA DẤU HIỆU SINH TỒN</h6>
-                                    <h6> <img src="resource/tick.png" /> KIỂM TRA MỘT CÁCH TOÀN DIỆN</h6>
-                                    <h6> <img src="resource/tick.png" /> ĐÁNH GIÁ CÁC TRIỆU CHỨNG HO, SỐT</h6>
-                                    <h6> <img src="resource/tick.png" /> ĐÁNH GIÁ CÁC TRIỆU CHỨNG VIÊM NHIỄM ĐƯỜNG RUỘT</h6>
-                                    <h6> <img src="resource/tick.png" /> ĐÁNH GIÁ NHIỀU VẤN ĐỀ SỨC KHOẺ KHÁC</h6>
+                                    <h6> <img src="resource/tick.png" alt='tick' /> KIỂM TRA DẤU HIỆU SINH TỒN</h6>
+                                    <h6> <img src="resource/tick.png" alt='tick' /> KIỂM TRA MỘT CÁCH TOÀN DIỆN</h6>
+                                    <h6> <img src="resource/tick.png" alt='tick' /> ĐÁNH GIÁ CÁC TRIỆU CHỨNG HO, SỐT</h6>
+                                    <h6> <img src="resource/tick.png" alt='tick' /> ĐÁNH GIÁ CÁC TRIỆU CHỨNG VIÊM NHIỄM ĐƯỜNG RUỘT</h6>
+                                    <h6> <img src="resource/tick.png" alt='tick' /> ĐÁNH GIÁ NHIỀU VẤN ĐỀ SỨC KHOẺ KHÁC</h6>
                                 </div>
                             </div>
                         </div>

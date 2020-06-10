@@ -33,15 +33,15 @@ export default class nursing extends Component {
 
                             <div class="card">
                                 <div class="card-header ">
-                                    <img class="card-img-top" src="resource/chamsocbe.jpg" alt="Card image cap" />
-                                    <img src="resource/LAMSANG.png" />Chăm sóc bé yêu</div>
+                                    <img class="card-img-top" src="resource/chamsocbe.jpg" alt="Card cap" />
+                                    <img src="resource/LAMSANG.png" alt=''/>Chăm sóc bé yêu</div>
 
                                 <div class="card-body">
-                                    <h6> <img src="resource/tick.png" /> TƯ VẤN NUÔI CON BẰNG SỮA MẸ</h6>
-                                    <h6> <img src="resource/tick.png" /> TẮM CHO BÉ</h6>
-                                    <h6> <img src="resource/tick.png" /> RỬA MŨI CHO BÉ</h6>
-                                    <h6> <img src="resource/tick.png" /> VỆ SINH RỐN</h6>
-                                    <h6> <img src="resource/tick.png" /> MÁT XA CHO BÉ</h6>
+                                    <h6> <img src="resource/tick.png" alt='tick' /> TƯ VẤN NUÔI CON BẰNG SỮA MẸ</h6>
+                                    <h6> <img src="resource/tick.png" alt='tick' /> TẮM CHO BÉ</h6>
+                                    <h6> <img src="resource/tick.png" alt='tick' /> RỬA MŨI CHO BÉ</h6>
+                                    <h6> <img src="resource/tick.png" alt='tick' /> VỆ SINH RỐN</h6>
+                                    <h6> <img src="resource/tick.png" alt='tick' /> MÁT XA CHO BÉ</h6>
                                 </div>
                             </div>
                         </div>
@@ -49,18 +49,18 @@ export default class nursing extends Component {
                         <div class="chamsocvetthuong col">
                             <div class="card">
                                 <div class="card-header ">
-                                    <img class="card-img-top" src="resource/chamsocvetthuong.jpg" alt="Card image cap" />
-                                    <img src="resource/XETNGHIEM.png" />Chăm sóc vết thương</div>
+                                    <img class="card-img-top" src="resource/chamsocvetthuong.jpg" alt="Card cap" />
+                                    <img src="resource/XETNGHIEM.png" alt=''/>Chăm sóc vết thương</div>
                                 <div class="card-body">
-                                    <h6> <img src="resource/tick.png" /> CHĂM SÓC VẾT THƯƠNG</h6>
-                                    <h6> <img src="resource/tick.png" /> KIỂM SOÁT CƠN ĐAU</h6>
-                                    <h6> <img src="resource/tick.png" /> THEO SÁT PHÁT ĐỒ ĐIỀU TRỊ</h6>
-                                    <h6> <img src="resource/tick.png" /> CẮT CHỈ/GỠ BỎ GHIM PHẪU THUẬT</h6>
-                                    <h6> <img src="resource/tick.png" /> ĐẶT NỘI KHÍ QUẢN</h6>
-                                    <h6> <img src="resource/tick.png" /> THAY ĐỔI VÀ ĐẶT BÓNG DẠ DÀY</h6>
-                                    <h6> <img src="resource/tick.png" /> ĐẶT ỐNG THÔNG NIỆU ĐẠO</h6>
-                                    <h6> <img src="resource/tick.png" /> ĐẶT ỐNG THÔNG DẠ DÀY</h6>
-                                    <h6> <img src="resource/tick.png" /> TRUYỀN SẮT QUA TĨNH MẠCH</h6>
+                                    <h6> <img src="resource/tick.png" alt='tick' /> CHĂM SÓC VẾT THƯƠNG</h6>
+                                    <h6> <img src="resource/tick.png" alt='tick' /> KIỂM SOÁT CƠN ĐAU</h6>
+                                    <h6> <img src="resource/tick.png" alt='tick' /> THEO SÁT PHÁT ĐỒ ĐIỀU TRỊ</h6>
+                                    <h6> <img src="resource/tick.png" alt='tick' /> CẮT CHỈ/GỠ BỎ GHIM PHẪU THUẬT</h6>
+                                    <h6> <img src="resource/tick.png" alt='tick' /> ĐẶT NỘI KHÍ QUẢN</h6>
+                                    <h6> <img src="resource/tick.png" alt='tick' /> THAY ĐỔI VÀ ĐẶT BÓNG DẠ DÀY</h6>
+                                    <h6> <img src="resource/tick.png" alt='tick' /> ĐẶT ỐNG THÔNG NIỆU ĐẠO</h6>
+                                    <h6> <img src="resource/tick.png" alt='tick' /> ĐẶT ỐNG THÔNG DẠ DÀY</h6>
+                                    <h6> <img src="resource/tick.png" alt='tick' /> TRUYỀN SẮT QUA TĨNH MẠCH</h6>
                                 </div>
                             </div>
                         </div>

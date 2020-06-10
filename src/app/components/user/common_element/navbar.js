@@ -1,4 +1,4 @@
-import React,{useEffect} from 'react';
+import React, { useEffect } from 'react';
 import Popup from "reactjs-popup";
 import axios from 'axios'
 
@@ -11,9 +11,6 @@ import Nursing from '../service_detail/nursing'
 import Generality from '../../../components/user/service_detail/generality'
 import CancerScreening from '../../../components/user/service_detail/cancer_screening'
 import Doctors from '../../../components/user/doctors';
-import Dashboard from '../../../components/admin/dashboard';
-import PersonnelManagement from '../../../components/admin/personnel_management';
-import OrderApproving from '../../../components/admin/order_approving';
 
 import '../../../../css/form-style.css';
 import '../../../../css/home-style.css';
@@ -31,71 +28,70 @@ import {
 } from "react-router-dom";
 
 function Navbar() {
-  let name='';
-  let jwt=''
+  let name = '';
+  let jwt = ''
 
-  let nameDoctor='';
-  let jwtDoctor=''
+  let nameDoctor = '';
+  let jwtDoctor = ''
 
   useEffect(() => {
     const banlabacsi = document.getElementById("banlabacsi");
-      const dangky = document.getElementById("dangky");
-      const dathenkham = document.getElementById("dathenkham");
+    const dangky = document.getElementById("dangky");
+    const dathenkham = document.getElementById("dathenkham");
 
-   console.log("after f5",window.sessionStorage.accessToken)
+    console.log("after f5", window.sessionStorage.accessToken)
     console.log(window.sessionStorage.getItem('loginType'));
-    if(window.sessionStorage.accessToken)
-    {
-      if (name!==null) {
+    if (window.sessionStorage.accessToken) {
+      if (name !== null) {
         banlabacsi.style.display = "none";
         dangky.style.display = "none";
         dathenkham.style.display = "none";
       }
-      axios.post('https://final-wcy-backend.herokuapp.com/authentication/'+window.sessionStorage.getItem('loginType'), {
+      axios.post('https://final-wcy-backend.herokuapp.com/authentication/' + window.sessionStorage.getItem('loginType'), {
         accessToken: window.sessionStorage.accessToken,
-        strategy:"jwt"
+        strategy: "jwt"
       })
-      .then(function (response) {
-        // console.log(response);
-        // console.log(response.data.accessToken);
-        // console.log(response.data.user.name);
-        if(window.sessionStorage.getItem('loginType')==='users'){
-          name=response.data.user.name;
-        }
-        else{
-          name=response.data.doctor.name;
-        }
-        
-        // jwt=response.data.accessToken;
-        // window.sessionStorage.accessToken = response.data.accessToken;
-        // window.sessionStorage.setItem('loginType', 'users');
-        // console.log("Window token")
-        // console.log(window.sessionStorage.accessToken)
-      })
-      .catch(function (error) {
-        console.log(error);
-        window.sessionStorage.accessToken=null;
-      })
-      .then(function () {
-        // always executed
-        if (name!==null) {
-          banlabacsi.style.display = "none";
-          dangky.style.display = "none";
-          dathenkham.style.display = "none";
-        }
-      });  
+        .then(function (response) {
+          // console.log(response);
+          // console.log(response.data.accessToken);
+          // console.log(response.data.user.name);
+          if (window.sessionStorage.getItem('loginType') === 'users') {
+            name = response.data.user.name;
+          }
+          else {
+            name = response.data.doctor.name;
+          }
+
+          // jwt=response.data.accessToken;
+          // window.sessionStorage.accessToken = response.data.accessToken;
+          // window.sessionStorage.setItem('loginType', 'users');
+          // console.log("Window token")
+          // console.log(window.sessionStorage.accessToken)
+        })
+        .catch(function (error) {
+          console.log(error);
+          window.sessionStorage.accessToken = null;
+        })
+        .then(function () {
+          // always executed
+          if (name !== null) {
+            banlabacsi.style.display = "none";
+            dangky.style.display = "none";
+            dathenkham.style.display = "none";
+          }
+        });
     }
-    
+
   }, null)
 
-  const handleSignUp = () =>{
-    
-    const name = document.getElementById("Form-signup-name").value;
-    const email= document.getElementById("Form-signup-email").value;
-    const pass1= document.getElementById("Form-pass1").value;
-    const pass2= document.getElementById("Form-pass2").value;
+  const handleSignUp = () => {
 
-    if(pass1 !== pass2){
+    const name = document.getElementById("Form-signup-name").value;
+    const email = document.getElementById("Form-signup-email").value;
+    const pass1 = document.getElementById("Form-pass1").value;
+    const pass2 = document.getElementById("Form-pass2").value;
+
+    if (pass1 !== pass2) {
       alert("Nhap lai mat khau")
       return
     }
@@ -105,38 +101,37 @@ function Navbar() {
       email: email,
       password: pass1,
     })
-    .then(function (response) {
-      console.log(response);
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
-    }
-
-    const handleSignIn = () =>{
-      const email= document.getElementById("Form-signin-email").value;
-      const pass= document.getElementById("Form-signin-pass").value;
-
-      const banlabacsi = document.getElementById("banlabacsi");
-      const dangky = document.getElementById("dangky");
-      const dathenkham = document.getElementById("dathenkham");
-
-      if(email ===null || pass===null)
-      {
-        alert("Nhap email & password")
-        return
-      }
-      axios.post('https://final-wcy-backend.herokuapp.com/authentication/users', {
-        email: email,
-        password: pass,
-        strategy: "local",
+      .then(function (response) {
+        console.log(response);
       })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }
+
+  const handleSignIn = () => {
+    const email = document.getElementById("Form-signin-email").value;
+    const pass = document.getElementById("Form-signin-pass").value;
+
+    const banlabacsi = document.getElementById("banlabacsi");
+    const dangky = document.getElementById("dangky");
+    const dathenkham = document.getElementById("dathenkham");
+
+    if (email === null || pass === null) {
+      alert("Nhap email & password")
+      return
+    }
+    axios.post('https://final-wcy-backend.herokuapp.com/authentication/users', {
+      email: email,
+      password: pass,
+      strategy: "local",
+    })
       .then(function (response) {
         console.log(response);
         console.log(response.data.accessToken);
         console.log(response.data.user.name);
-        name=response.data.user.name;
-        jwt=response.data.accessToken;
+        name = response.data.user.name;
+        jwt = response.data.accessToken;
         window.sessionStorage.accessToken = response.data.accessToken;
         window.sessionStorage.setItem('loginType', 'users');
         console.log("Window token")
@@ -147,68 +142,67 @@ function Navbar() {
       })
       .then(function () {
         // always executed
-        if (name!==null) {
+        if (name !== null) {
           banlabacsi.style.display = "none";
           dangky.style.display = "none";
           dathenkham.style.display = "none";
         }
-      });     
-      }
+      });
+  }
 
-      const handleSignInFB = () =>{
-        axios.post('https://final-wcy-backend.herokuapp.com/authentication/users', {
-          strategy: "facebook",   
-        })
-        .then(function (response) {
-          console.log(response);
-          console.log(response.data.accessToken);
-          console.log(response.data.user.name);
-          name=response.data.user.name;
-          jwt=response.data.accessToken;
+  const handleSignInFB = () => {
+    axios.post('https://final-wcy-backend.herokuapp.com/authentication/users', {
+      strategy: "facebook",
+    })
+      .then(function (response) {
+        console.log(response);
+        console.log(response.data.accessToken);
+        console.log(response.data.user.name);
+        name = response.data.user.name;
+        jwt = response.data.accessToken;
 
-          window.sessionStorage.accessToken = response.data.accessToken;
-        })
-        .catch(function (error) {
-          console.log(error);
-        })
-        .then(function () {
-          // always executed
-        });  
-        // const dangnhap = document.getElementById("dangnhap");
-        // const dangky = document.getElementById("dangky");
-        // const dathenkham = document.getElementById("dathenkham");
-  
-        // if (name!==null) {
-        //   dangnhap.style.display = "none";
-        //   dangky.style.display = "none";
-        //   dathenkham.style.display = "none";
-        // }
-        }
-
-      const handleDoctorSignIn=()=>{
-          const email= document.getElementById("Form-email-doctor").value;
-          const pass= document.getElementById("Form-pass-doctor").value;
-
-          const banlabacsi = document.getElementById("banlabacsi");
-          const dangky = document.getElementById("dangky");
-          const dathenkham = document.getElementById("dathenkham");
-  
-      if(email ===null || pass===null)
-      {
-        alert("Nhap email & password")
-        return
-      }
-      axios.post('https://final-wcy-backend.herokuapp.com/authentication/doctors', {
-        email: email,
-        password: pass,
-        strategy: "local",
+        window.sessionStorage.accessToken = response.data.accessToken;
       })
+      .catch(function (error) {
+        console.log(error);
+      })
+      .then(function () {
+        // always executed
+      });
+    // const dangnhap = document.getElementById("dangnhap");
+    // const dangky = document.getElementById("dangky");
+    // const dathenkham = document.getElementById("dathenkham");
+
+    // if (name!==null) {
+    //   dangnhap.style.display = "none";
+    //   dangky.style.display = "none";
+    //   dathenkham.style.display = "none";
+    // }
+  }
+
+  const handleDoctorSignIn = () => {
+    const email = document.getElementById("Form-email-doctor").value;
+    const pass = document.getElementById("Form-pass-doctor").value;
+
+    const banlabacsi = document.getElementById("banlabacsi");
+    const dangky = document.getElementById("dangky");
+    const dathenkham = document.getElementById("dathenkham");
+
+    if (email === null || pass === null) {
+      alert("Nhap email & password")
+      return
+    }
+    axios.post('https://final-wcy-backend.herokuapp.com/authentication/doctors', {
+      email: email,
+      password: pass,
+      strategy: "local",
+    })
       .then(function (response) {
         console.log(response);
         console.log(response.data.accessToken);
         console.log(response.data.doctor.name);
-        nameDoctor=response.data.doctor.name;
-        jwtDoctor=response.data.accessToken
+        nameDoctor = response.data.doctor.name;
+        jwtDoctor = response.data.accessToken
         window.sessionStorage.accessToken = response.data.accessToken;
         window.sessionStorage.setItem('loginType', 'doctors');
 
@@ -217,14 +211,14 @@ function Navbar() {
         console.log(error);
       })
       .then(function () {
-        if (nameDoctor!==null) {
+        if (nameDoctor !== null) {
           banlabacsi.style.display = "none";
           dangky.style.display = "none";
           dathenkham.style.display = "none";
         }
-      });  
-        }
-  
+      });
+  }
+
   return (
     <div>
       <Router>
@@ -435,15 +429,6 @@ function Navbar() {
           </Route>
           <Route path="/services/cancerscreening" exact>
             <CancerScreening />
-          </Route>
-          <Route path="/admin/dashboard" exact>
-            <Dashboard />
-          </Route>
-          <Route path="/admin/order-approving" exact>
-            <OrderApproving />
-          </Route>
-          <Route path="/admin/personnel-management" exact>
-            <PersonnelManagement />
           </Route>
         </Switch>
       </Router>
