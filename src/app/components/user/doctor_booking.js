@@ -31,6 +31,16 @@ export default class DoctorBooking extends Component {
     }
 
     componentDidMount() {
+        if(window.sessionStorage.accessToken && window.sessionStorage.getItem('loginType')==='doctors'){
+            //disable select doctor and calendar and show all orders of this doctor
+            console.log("Login type is doctor and JWT ", window.sessionStorage.accessToken + window.sessionStorage.getItem('loginType'))
+        }
+        if(window.sessionStorage.accessToken && window.sessionStorage.getItem('loginType')==='users'){
+            //normal flow
+            console.log("Login type is user and JWT ", window.sessionStorage.accessToken + window.sessionStorage.getItem('loginType'))
+        }
+
+        //disable all caledar and others field
         this.getAllDoctors();
     }
 
@@ -97,6 +107,8 @@ export default class DoctorBooking extends Component {
 
     handleEventClick = (arg) => {
         console.log(arg);
+        console.log("Test user ID from doctor-booking")
+        console.log(window.sessionStorage.getItem('userId'))
     }
 
     handleEventRendering = (arg) => {

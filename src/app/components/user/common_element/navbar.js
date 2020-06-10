@@ -28,12 +28,12 @@ import {
   Switch,
   Route,
   Link,
-  Redirect
+
 } from "react-router-dom";
 
 function Navbar() {
   const [signInInfo, setSignInInfo] = useState(null);
-  let idInfo;
+  
   const signInHandler = () => {
     console.log("this is sign in handler", JSON.stringify(signInInfo));
     if (signInInfo != null) {
@@ -276,6 +276,7 @@ function Navbar() {
         
         window.sessionStorage.accessToken = response.data.accessToken;
         window.sessionStorage.setItem('loginType', 'users');
+        window.sessionStorage.setItem('userId', response.data.user.id );
         console.log("Window token")
         console.log(window.sessionStorage.accessToken)
       })
@@ -446,7 +447,6 @@ function Navbar() {
           </nav>
         </section>
         <Switch>
-          
           <Route path="/home" exact>
             <Home />
           </Route>
@@ -483,7 +483,6 @@ function Navbar() {
           <Route path="/admin/personnel-management" exact>
             <PersonnelManagement />
           </Route>
-          <Redirect from='/' to='/home'></Redirect>
         </Switch>
       </Router>
     </div>
