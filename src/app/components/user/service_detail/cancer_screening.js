@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import '../../../../css/style_ungthu.css';
+//import '../../../../css/style_ungthu.css';
+
 export default class cancer_screening extends Component {
     render() {
         return (

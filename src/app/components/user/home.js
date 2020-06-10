@@ -16,12 +16,16 @@ import international from '../../../assets/png/international-icon.png';
 import scopeThumnb from '../../../assets/png/stethoscope-thumb.png';
 import doctor from '../../../assets/background/doctor.png';
 import serviceBG from '../../../assets/background/service-bg.PNG';
-import Navbar from './common_element/navbar';
-import Footer from './common_element/footer';
+
+import {
+  BrowserRouter as Router,
+  Link
+} from "react-router-dom";
 
 function Body() {
   return (
     <div>
+      <Router>
       <section id="home-top">
         <div id="home-top-bkgrd" className="jumbotron jumbotron-fluid">
           <div className="container">
@@ -30,7 +34,9 @@ function Body() {
               <div><h1><b>đến nhà</b></h1></div>
               <div className="row">
                 <ul>
-                  <button className="btn" data-toggle="modal" data-target="#booking-form"><b>ĐẶT HẸN KHÁM</b></button>
+                  <Link to='doctor-booking'>
+                    <button className="btn" data-toggle="modal" data-target="#booking-form"><b>ĐẶT HẸN KHÁM</b></button>
+                    </Link>
                 </ul>
                 <ul className="col align-self-center">
                   <div><h3><b>CHỈ TỪ 350.000Đ</b></h3></div>
@@ -211,7 +217,7 @@ function Body() {
           </div>
         </div>
       </section>
-      <section id="top-doctors-section">
+      <section id="doctors-section">
         <div className="row container-fluid">
           <div className="container col">
             <h2>Đội Ngũ Bác Sĩ Chuyên Khoa Thân Thiện Giàu Kinh Nghiệm</h2>
@@ -230,7 +236,7 @@ function Body() {
               </div>
             </div>
             <br />
-            <a href="doctor.html" className="btn btn-success pl-5">Gặp gỡ các Bác sĩ WCY</a>
+            <Link to="/doctors" className="btn btn-success pl-5">Gặp gỡ các Bác sĩ WCY</Link>
           </div>
           <div className="col"><img src={doctor} alt="doctor" /></div>
         </div>
@@ -238,7 +244,7 @@ function Body() {
       <section id="service-section">
         <div className="row container-fluid">
           <div className="col"><img src={serviceBG} alt="Service" /></div>
-          <div className="container col">
+          <div className="col" style={{marginTop: '10rem'}}>
             <h3>Bạn Thấy Không Khỏe?    <br /><b>Hãy Để Chúng Tôi Chăm Sóc Bạn</b></h3>
             <p>Mang trải nghiệm thăm khám đa khoa hiện đại đến ngay trong ngôi nhà thân yêu của bạn.
           Từ cảm thông thường đến các bệnh mãn tính, các bác sĩ WeCareYou luôn sẵn sàng chăm sóc tận tình, chu đáo cho bạn &amp; gia đình.</p>
@@ -254,13 +260,25 @@ function Body() {
             </div>
             <div className="row" id="button-row">
               <div className="col-auto"> <br />
-                <a href="dichvu.html" className="btn btn-success">Khám phá các dịch vụ của chúng tôi</a>
+                <Link to="/services" className="btn btn-success">Khám phá các dịch vụ của chúng tôi</Link>
               </div>
             </div>
           </div>
         </div>
       </section>
-      <Footer/>
+      {/* <Switch>        
+          <Route path="/services" exact>
+            <Services />
+          </Route>
+          <Route path="/doctors" exact>
+            <Doctors />
+          </Route>
+          <Route path="/doctor-booking" exact>
+            <DoctorBooking />
+          </Route>        
+        </Switch> */}
+      </Router>
+
     </div>
     
   )

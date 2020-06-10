@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import '../../../../css/style_dinhki.css';
+//import '../../../../css/style_dinhki.css';
 
 export default class periodic extends Component {
     render() {
