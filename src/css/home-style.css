@@ -85,4 +85,20 @@ footer > div{
     background-color:#1A2456; 
     color:#fff;
 }
-
+.btnEdit{
+    color: red;
+    right: 20px;
+    position: absolute;
+}
+.formProfile{
+    padding: 25px;
+    padding-top: 25px;
+    padding-bottom: 45px;
+    padding-left: 25px;
+    padding-right: 25px;
+    position: relative;
+    color: red;
+}
+.textInfo{
+    color: #1A2456;
+}

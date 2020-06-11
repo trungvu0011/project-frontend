@@ -5,9 +5,6 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 
 import Navbar from './app/components/user/common_element/navbar';
 import Footer from './app/components/user/common_element/footer';
-import Dashboard from './app/components/admin/dashboard';
-import PersonnelManagement from './app/components/admin/personnel_management';
-import OrderApproving from './app/components/admin/order_approving';
 
 import * as serviceWorker from './serviceWorker';
 
