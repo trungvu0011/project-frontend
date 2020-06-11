@@ -100,8 +100,7 @@ export default class BookingModal extends Component {
                 startTime: new Date(start),
                 endTime: new Date(end),
                 doctorId: this.state.selectedDoctor.id,
-                //creatorId: this.state.creatorId,
-                creatorId: 1,
+                creatorId: this.state.creatorId,
                 createdTime: new Date(now) 
         }
 

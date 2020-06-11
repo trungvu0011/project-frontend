@@ -5,7 +5,11 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 
 import Navbar from './app/components/user/common_element/navbar';
 import Footer from './app/components/user/common_element/footer';
+<<<<<<< HEAD
 import AdminNavbar from './app/components/admin/admin-navbar';
+=======
+
+>>>>>>> UI_initializing
 import * as serviceWorker from './serviceWorker';
 import {
   BrowserRouter as Router,
