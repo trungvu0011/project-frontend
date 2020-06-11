@@ -1,0 +1,53 @@
+#nhikhoa__top{
+    margin-top: 140px;
+    overflow: hidden;
+}
+
+#nhikhoa__top > div{
+    justify-content: center;
+}
+
+#nhikhoa__top > div > div{
+    align-self: center;
+    margin-left: 25px;
+    line-height: 30px;
+}
+
+#nhikhoa__top .bg{
+    float: right;
+    overflow: auto;
+    border-radius: 25px;
+}
+
+#nhikhoa__top .rectangle{
+    width: 500px;
+    height: 10px;
+    margin-top: 50px;
+    background: #405DF5;
+}
+
+#nhikhoa__content{
+    margin-bottom: 50px;
+}
+
+#nhikhoa__content .rectangle{
+    width: 90%;
+    height: 10px;
+    background: #405DF5;
+}
+
+#nhikhoa__content .card{
+    height: 330px;
+    width: 400px;
+}
+
+#nhikhoa__content > .row{
+    margin-top: 50px;
+    margin-left: 50px;
+}
+
+#nhikhoa__content{
+    padding-bottom: 10px;
+    overflow: hidden;
+}
+
