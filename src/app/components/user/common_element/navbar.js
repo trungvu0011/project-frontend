@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Popup from "reactjs-popup";
 import axios from 'axios'
 
@@ -24,70 +24,203 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
+  Link,
+
 } from "react-router-dom";
 
 function Navbar() {
-  let name = '';
-  let jwt = ''
+  const [signInInfo, setSignInInfo] = useState(null);
+  
+  const signInHandler = () => {
+    console.log("this is sign in handler", JSON.stringify(signInInfo));
+    if (signInInfo != null) {
+      console.log(" not null")
+      let welcome;
+      if (signInInfo.signInType === 'users') {
+        welcome = "Chào bạn " + signInInfo.name;
+      }
+      else {
+        welcome = "Chào bác sĩ " + signInInfo.name;
+      }
+      return (
+        <div className="btn-group mr-2">
+        <Popup modal trigger={<button className="btn btn-light btn-sm rounded-bottom xinchao" id="xinchao" ><b>{welcome}</b></button>}>
+        <div className="modal-content form-elegant">
+                      {/*Header*/}
+                      <div className="modal-header text-center">
+      <h3 className="modal-title w-100 dark-grey-text my-3" id="myModalLabel"><strong>Chào {signInInfo.name}, đây là thông tin của bạn</strong></h3>
+                      </div>
+                        <div className="form-control validate">Họ tên: {signInInfo.name}</div>
+                        <div className="form-control validate">Số điện thoại: {signInInfo.phone}</div>
+                        <div className="form-control validate">Email: {signInInfo.email}</div>
+                        <div className="text-center mb-3">
+                        <Popup modal trigger={ <button id="main-button" type="button" className="btn btn-block  btn-rounded z-depth-1a" >Đổi mật khẩu</button>}>
+                        <div className="md-form mb-5">
+                            <h4> Nhập mật khẩu mới</h4>
+                            <input type="password" id="change-password1" className="form-control validate" />
+                            <h4> Nhập mật lại khẩu mới</h4>
+                            <input type="password" id="change-password2" className="form-control validate" />
+                            </div>
+                            <button id="main-button" type="button" className="btn btn-block  btn-rounded z-depth-1a" onClick={changePassword}>Đổi mật khẩu</button>
+                        </Popup>
+                        </div>
+                      </div>
+                   
+        </Popup>
+        <button className="btn btn-light btn-sm rounded-bottom logout" id="logout" onClick={handleLogout} ><b>Log out</b>
+        </button>
+        </div>
+      );
+    }
+    else {
+      console.log("is null")
+      return (
+        <div className="btn-group mr-2">
+          <Popup modal trigger={<button className="btn btn-light btn-sm rounded-bottom" id="banlabacsi"><b>Bạn là bác sĩ ?</b></button>}>
+                  
+                  <div>
+                    <div className="modal-content form-elegant">
+                      <div className="text-center">
+                        <h3 className="modal-title w-100 dark-grey-text font-weight-bold my-3" id="xinchao"><strong>Chào bác sĩ</strong></h3>
+                        <div className="modal-body mx-4">
+                          {/*Body*/}
+                          <div className="md-form mb-5">
 
-  let nameDoctor = '';
-  let jwtDoctor = ''
+                            <h4> Đăng nhập</h4>
+                            <input type="email" id="Form-email-doctor" className="form-control validate" />
+
+                          </div>
+
+                          <div className="md-form pb-3">
+                            <h4> Mật khẩu</h4>
+                            <input type="password" id="Form-pass-doctor" className="form-control validate" />
+                          </div>
+                          <div className="text-center mb-3">
+                            <button onClick={handleDoctorSignIn} id="main-button" type="button" className="btn btn-block btn-rounded z-depth-1a">Đăng Nhập</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </Popup>
+
+                <div className="btn-group">
+                  <Popup modal trigger={<button className="btn btn-light btn-sm rounded-bottom signup-btn" id='dangky' ><b>Đăng Ký</b></button>}>
+
+                    {/*Content*/}
+                    <div className="modal-content form-elegant">
+                      {/*Header*/}
+                      <div className="modal-header text-center">
+                        <h3 className="modal-title w-100 dark-grey-text my-3" id="myModalLabel"><strong>Đăng Ký Tài Khoản</strong></h3>
+                      </div>
+                      {/*Body*/}
+                      <div className="modal-body mx-4">
+                        {/*Body*/}
+                        <div className="md-form mb-5">
+
+                          <input type="email" id="Form-signup-email" className="form-control validate" />
+                          <label data-error="wrong" data-success="right" htmlFor="Form-email1">Email</label>
+                        </div>
+                        <div className="md-form pd-1">
+                          <input type="text" id="Form-signup-name" className="form-control validate" />
+                          <label data-error="wrong" data-success="right" htmlFor="Form-pass1">Họ &amp; tên đầy đủ</label>
+                        </div>
+                        <div className="md-form pd-1">
+                          <input type="text" id="Form-signup-phone" className="form-control validate" />
+                          <label data-error="wrong" data-success="right" htmlFor="Form-pass1">Số điện thoại</label>
+                        </div>
+                        <div className="md-form pd-1">
+                          <input type="password" id="Form-pass1" className="form-control validate" />
+                          <label data-error="wrong" data-success="right" htmlFor="Form-pass1">Tạo một mật khẩu</label>
+                        </div>
+                        <div className="md-form pd-1">
+                          <input type="password" id="Form-pass2" className="form-control validate" />
+
+                          <label data-error="wrong" data-success="right" htmlFor="Form-pass1">Nhập lại mật khẩu</label>
+                        </div>
+                        <form>
+                          <label><input type="checkbox" name="personality" defaultChecked /> Nhận thông tin &amp; khuyến mãi của chúng tôi qua email</label><br />
+                        </form>
+                        <div className="text-center mb-3">
+
+                          <button id="main-button" type="button" className="btn btn-block  btn-rounded z-depth-1a" onClick={handleSignUp}>Đăng Ký</button>
+
+                        </div>
+                      </div>
+                      {/*Footer*/}
+                    </div>
+                    {/*/.Content*/}
+                  </Popup>
+                </div>
+        </div>
+      );
+    }
+  }
 
   useEffect(() => {
-    const banlabacsi = document.getElementById("banlabacsi");
-    const dangky = document.getElementById("dangky");
     const dathenkham = document.getElementById("dathenkham");
+    if (signInInfo != null) {
+      dathenkham.style.display="none"
+      return;
+    }
 
-    console.log("after f5", window.sessionStorage.accessToken)
-    console.log(window.sessionStorage.getItem('loginType'));
+    console.log("Sign in is null");
     if (window.sessionStorage.accessToken) {
-      if (name !== null) {
-        banlabacsi.style.display = "none";
-        dangky.style.display = "none";
-        dathenkham.style.display = "none";
-      }
       axios.post('https://final-wcy-backend.herokuapp.com/authentication/' + window.sessionStorage.getItem('loginType'), {
         accessToken: window.sessionStorage.accessToken,
         strategy: "jwt"
       })
         .then(function (response) {
-          // console.log(response);
-          // console.log(response.data.accessToken);
-          // console.log(response.data.user.name);
           if (window.sessionStorage.getItem('loginType') === 'users') {
-            name = response.data.user.name;
+            setSignInInfo({
+              name: response.data.user.name,
+              email: response.data.user.email,
+              signInType: 'users'
+            });
           }
           else {
-            name = response.data.doctor.name;
-          }
-
-          // jwt=response.data.accessToken;
-          // window.sessionStorage.accessToken = response.data.accessToken;
-          // window.sessionStorage.setItem('loginType', 'users');
-          // console.log("Window token")
-          // console.log(window.sessionStorage.accessToken)
+            setSignInInfo({
+              name: response.data.doctor.name,
+              email: response.data.doctor.email,
+              signInType: 'doctors'
+            });          }
         })
         .catch(function (error) {
           console.log(error);
           window.sessionStorage.accessToken = null;
         })
-        .then(function () {
-          // always executed
-          if (name !== null) {
-            banlabacsi.style.display = "none";
-            dangky.style.display = "none";
-            dathenkham.style.display = "none";
-          }
-        });
     }
-
   }, null)
 
-  const handleSignUp = () => {
+  const changePassword =()=>{
+    const pass1 = document.getElementById("change-password1").value;
+    const pass2 = document.getElementById("change-password2").value;
+    if(pass1 !== pass2){
+      alert("Nhập 2 mật khẩu phải khớp nhau");
+      return;
+    }
+    
+    axios.patch('https://final-wcy-backend.herokuapp.com/' + signInInfo.signInType + "/" + signInInfo.id, {
+      password: pass2
+    },{
+      headers: {
+        jwt: window.sessionStorage.accessToken
+      }
+    }).then(function (response) {
+      console.log(response);
+      alert("Thay đổi password thành công, mời đăng nhập lại")
+      handleLogout();
+    })
+    .catch(function (error) {
+      console.log(error);
+      alert("Đổi mật khẩu thất bại")
+    });
+  }
 
+  const handleSignUp = () => {
     const name = document.getElementById("Form-signup-name").value;
     const email = document.getElementById("Form-signup-email").value;
+    const phone = document.getElementById("Form-signup-phone").value;
     const pass1 = document.getElementById("Form-pass1").value;
     const pass2 = document.getElementById("Form-pass2").value;
 
@@ -100,22 +233,21 @@ function Navbar() {
       name: name,
       email: email,
       password: pass1,
+      phone: phone,
     })
       .then(function (response) {
         console.log(response);
+        alert("Đăng kí thành công")
       })
       .catch(function (error) {
         console.log(error);
+        alert("Đăng kí thất bại")
       });
   }
 
   const handleSignIn = () => {
     const email = document.getElementById("Form-signin-email").value;
     const pass = document.getElementById("Form-signin-pass").value;
-
-    const banlabacsi = document.getElementById("banlabacsi");
-    const dangky = document.getElementById("dangky");
-    const dathenkham = document.getElementById("dathenkham");
 
     if (email === null || pass === null) {
       alert("Nhap email & password")
@@ -130,63 +262,34 @@ function Navbar() {
         console.log(response);
         console.log(response.data.accessToken);
         console.log(response.data.user.name);
-        name = response.data.user.name;
-        jwt = response.data.accessToken;
+        alert("Đăng nhập thành công")
+        setSignInInfo({
+          name: response.data.user.name,
+          email: response.data.user.email,
+          phone: response.data.user.phone,
+          signInType: 'users',
+          id: response.data.user.id,
+        });
+        
         window.sessionStorage.accessToken = response.data.accessToken;
         window.sessionStorage.setItem('loginType', 'users');
+        window.sessionStorage.setItem('userId', response.data.user.id );
         console.log("Window token")
         console.log(window.sessionStorage.accessToken)
       })
       .catch(function (error) {
         console.log(error);
+        alert("Đăng nhập thất bại")
       })
-      .then(function () {
-        // always executed
-        if (name !== null) {
-          banlabacsi.style.display = "none";
-          dangky.style.display = "none";
-          dathenkham.style.display = "none";
-        }
-      });
   }
 
   const handleSignInFB = () => {
-    axios.post('https://final-wcy-backend.herokuapp.com/authentication/users', {
-      strategy: "facebook",
-    })
-      .then(function (response) {
-        console.log(response);
-        console.log(response.data.accessToken);
-        console.log(response.data.user.name);
-        name = response.data.user.name;
-        jwt = response.data.accessToken;
-
-        window.sessionStorage.accessToken = response.data.accessToken;
-      })
-      .catch(function (error) {
-        console.log(error);
-      })
-      .then(function () {
-        // always executed
-      });
-    // const dangnhap = document.getElementById("dangnhap");
-    // const dangky = document.getElementById("dangky");
-    // const dathenkham = document.getElementById("dathenkham");
-
-    // if (name!==null) {
-    //   dangnhap.style.display = "none";
-    //   dangky.style.display = "none";
-    //   dathenkham.style.display = "none";
-    // }
+    
   }
 
   const handleDoctorSignIn = () => {
     const email = document.getElementById("Form-email-doctor").value;
     const pass = document.getElementById("Form-pass-doctor").value;
-
-    const banlabacsi = document.getElementById("banlabacsi");
-    const dangky = document.getElementById("dangky");
-    const dathenkham = document.getElementById("dathenkham");
 
     if (email === null || pass === null) {
       alert("Nhap email & password")
@@ -201,22 +304,29 @@ function Navbar() {
         console.log(response);
         console.log(response.data.accessToken);
         console.log(response.data.doctor.name);
-        nameDoctor = response.data.doctor.name;
-        jwtDoctor = response.data.accessToken
+
+        alert("Đăng nhập thành công")
+        setSignInInfo({
+          name: response.data.doctor.name,
+          email: response.data.doctor.email,
+          id: response.data.doctor.id,
+          signInType: 'doctors'
+        });
+
         window.sessionStorage.accessToken = response.data.accessToken;
         window.sessionStorage.setItem('loginType', 'doctors');
+        window.sessionStorage.setItem('doctorId', response.data.doctor.id);
 
       })
       .catch(function (error) {
         console.log(error);
+        alert("Đăng nhập thất bại")
       })
-      .then(function () {
-        if (nameDoctor !== null) {
-          banlabacsi.style.display = "none";
-          dangky.style.display = "none";
-          dathenkham.style.display = "none";
-        }
-      });
+  }
+
+  const handleLogout = () => {
+    setSignInInfo(null);
+    window.sessionStorage.accessToken = null;
   }
 
   return (
@@ -239,7 +349,8 @@ function Navbar() {
               <div className="collapse navbar-collapse narbar">
                 <ul className="pl-5 navbar-nav mr-auto">
                   <li className="nav-item">
-                    <Link className="nav-link" title="Trang Chủ" to="/home">
+                    <Link className="nav-link" title="Trang Chủ" to="/home" >
+
                       <span className="menu-icon">
                         <img src={menuIcon} alt="hinh anh" />
                       </span>
@@ -247,7 +358,9 @@ function Navbar() {
                     </Link>
                   </li>
                   <li className="nav-item">
-                    <Link className="nav-link" title="Dịch Vụ" to="/services">
+                    <Link className="nav-link" title="Dịch Vụ" to="/services" >
+
+
                       <span className="menu-icon">
                         <img src={careService} alt="hinh anh" />
                       </span>
@@ -255,7 +368,7 @@ function Navbar() {
                     </Link>
                   </li>
                   <li className="nav-item">
-                    <Link className="nav-link" title="Thông Tin Phòng Khám" to="/doctor-booking">
+                    <Link className="nav-link" title="Thông Tin Phòng Khám" to="/doctor-booking"  >
                       <span className="menu-icon">
                         <img src={medicine} alt="hinh anh" />
 
@@ -264,7 +377,8 @@ function Navbar() {
                     </Link>
                   </li>
                   <li className="nav-item">
-                    <Link className="nav-link" title="Đội Ngũ Bác Sĩ" to="/doctors">
+                    <Link className="nav-link" title="Đội Ngũ Bác Sĩ" to="/doctors" >
+
                       <span className="menu-icon">
                         <img src={scope} alt="hinh anh" />
                       </span>
@@ -274,7 +388,7 @@ function Navbar() {
                 </ul>
                 <div className="btn-toolbar mb-1">
                   <div className="btn-group mr-2">
-                    <Popup modal trigger={<button className="btn btn-success">Đặt Hẹn Khám Ngay</button>}>
+                    <Popup modal trigger={<button className="btn btn-success" id="dathenkham">Đặt Hẹn Khám Ngay</button>}>
                       <div>
                         <div className="modal-content form-elegant">
                           <div className="text-center">
@@ -286,20 +400,25 @@ function Navbar() {
 
                               <div className="md-form mb-5">
                                 <h4> Đăng nhập bằng tài khoản</h4>
-                                <input type="email" id="Form-email1" className="form-control validate" />
+
+                                <input type="email" id="Form-signin-email" className="form-control validate" />
+
                               </div>
 
                               <div className="md-form pb-3">
                                 <h4> Mật khẩu</h4>
-                                <input type="password" id="Form-pass1" className="form-control validate" />
+
+                                <input type="password" id="Form-signin-pass" className="form-control validate" />
                               </div>
                               <div className="text-center mb-3">
-                                <button id="main-button" type="button" className="btn btn-block btn-rounded z-depth-1a">Đăng Nhập</button>
+                                <button id="dangnhap" type="button" className="btn btn-block btn-rounded z-depth-1a" onClick={handleSignIn}>Đăng Nhập</button>
+
                               </div>
                               <p className="font-small dark-grey-text text-right d-flex justify-content-center mb-3 pt-2">
                                 hoặc đăng nhập bằng:</p>
                               <div className="row my-3 d-flex justify-content-center">
-                                <button type="button" className="btn btn-white btn-rounded mr-md-3 z-depth-1a">
+
+                                <button onClick={handleSignInFB} type="button" className="btn btn-white btn-rounded mr-md-3 z-depth-1a">
                                   <i className="fab fa-facebook-f text-center" />
                                 </button>
                                 <button type="button" className="btn btn-white btn-rounded z-depth-1a">
@@ -316,88 +435,11 @@ function Navbar() {
               </div>
             </nav>
 
+            
             <div id="signin-out-gr-button" className="container-fluid btn-group d-flex justify-content-end">
               {/* Đăng nhập button */}
               <div className="btn-toolbar mb-1">
-                <div className="btn-group mr-2">
-                  <Popup modal trigger={<button className="btn btn-light btn-sm rounded-bottom signin-btn"><b>Đăng Nhập</b></button>}>
-
-                    <div>
-                      <div className="modal-content form-elegant">
-                        <div className="text-center">
-                          <h3 className="modal-title w-100 dark-grey-text my-3" id="myModalLabel">
-                            <strong>Đăng Nhập</strong>
-                          </h3>
-                          <div className="modal-body mx-4">
-                            {/*Body*/}
-                            <div className="md-form mb-5">
-                              <h4> Đăng nhập bằng tài khoản</h4>
-                              <input type="email" id="Form-signin-email" className="form-control validate" />
-                            </div>
-
-                            <div className="md-form pb-3">
-                              <h4> Mật khẩu</h4>
-                              <input type="password" id="Form-signin-pass" className="form-control validate" />
-                            </div>
-                            <div className="text-center mb-3">
-                              <button id="dangnhap" type="button" className="btn btn-block btn-rounded z-depth-1a" onClick={handleSignIn}>Đăng Nhập</button>
-                            </div>
-                            <p className="font-small dark-grey-text text-right d-flex justify-content-center mb-3 pt-2">
-                              hoặc đăng nhập bằng:</p>
-                            <div className="row my-3 d-flex justify-content-center">
-                              <button onClick={handleSignInFB} type="button" className="btn btn-white btn-rounded mr-md-3 z-depth-1a">
-                                <i className="fab fa-facebook-f text-center" />
-                              </button>
-                              <button type="button" className="btn btn-white btn-rounded z-depth-1a">
-                                <i className="fab fa-google-plus-g" />
-                              </button>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </Popup>
-                </div>
-
-                <div className="btn-group">
-                  <Popup modal trigger={<button className="btn btn-light btn-sm rounded-bottom signup-btn" ><b>Đăng Ký</b></button>}>
-                    {/*Content*/}
-                    <div className="modal-content form-elegant">
-                      {/*Header*/}
-                      <div className="modal-header text-center">
-                        <h3 className="modal-title w-100 dark-grey-text my-3" id="myModalLabel"><strong>Đăng Ký Tài Khoản</strong></h3>
-                      </div>
-                      {/*Body*/}
-                      <div className="modal-body mx-4">
-                        {/*Body*/}
-                        <div className="md-form mb-5">
-                          <input type="email" id="Form-email1" className="form-control validate" />
-                          <label data-error="wrong" data-success="right" htmlFor="Form-email1">Họ &amp; tên đầy đủ</label>
-                        </div>
-                        <div className="md-form pd-1">
-                          <input type="password" id="Form-pass1" className="form-control validate" />
-                          <label data-error="wrong" data-success="right" htmlFor="Form-pass1">Số điện thoại</label>
-                        </div>
-                        <div className="md-form pd-1">
-                          <input type="password" id="Form-pass1" className="form-control validate" />
-                          <label data-error="wrong" data-success="right" htmlFor="Form-pass1">Tạo một mật khẩu</label>
-                        </div>
-                        <div className="md-form pd-1">
-                          <input type="password" id="Form-pass1" className="form-control validate" />
-                          <label data-error="wrong" data-success="right" htmlFor="Form-pass1">Nhập lại mật khẩu</label>
-                        </div>
-                        <form>
-                          <label><input type="checkbox" name="personality" defaultChecked /> Nhận thông tin &amp; khuyến mãi của chúng tôi qua email</label><br />
-                        </form>
-                        <div className="text-center mb-3">
-                          <button id="main-button" type="button" className="btn btn-block  btn-rounded z-depth-1a">Đăng Ký</button>
-                        </div>
-                      </div>
-                      {/*Footer*/}
-                    </div>
-                    {/*/.Content*/}
-                  </Popup>
-                </div>
+                {signInHandler()}
               </div>
             </div>
           </nav>

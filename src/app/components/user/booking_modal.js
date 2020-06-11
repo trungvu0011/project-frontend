@@ -30,6 +30,7 @@ export default class BookingModal extends Component {
             end: new Date(),
             isApproved: false,
             isRejected: false,
+            isEditing: false
         }
     }
 
@@ -46,15 +47,25 @@ export default class BookingModal extends Component {
             end: new Date(),
             isApproved: false,
             isRejected: false,
+            creatorId: null
         })
     }
     
-    componentWillReceiveProps(){
-        if(this.props.newOrder){
+    componentWillReceiveProps(nextProps){
+        if(nextProps.newOrder){
+            if(nextProps.newOrder.id){
+                this.setState({
+                    order_id: nextProps.newOrder.id,
+                    reason: nextProps.newOrder.title,
+                    isEditing: true
+                });
+            }
+            
             this.setState({
-                selectedDoctor: this.props.newOrder.doctor,
-                start: this.props.newOrder.start,
-                end: this.props.newOrder.end,
+                selectedDoctor: nextProps.newOrder.doctor,
+                start: new Date(nextProps.newOrder.start),
+                end: new Date(nextProps.newOrder.end),
+                creatorId : nextProps.newOrder.creatorId
             });
         }
     }
@@ -89,6 +100,7 @@ export default class BookingModal extends Component {
                 startTime: new Date(start),
                 endTime: new Date(end),
                 doctorId: this.state.selectedDoctor.id,
+                //creatorId: this.state.creatorId,
                 creatorId: 1,
                 createdTime: new Date(now) 
         }
@@ -105,6 +117,42 @@ export default class BookingModal extends Component {
             });
     }
 
+    editEvent = (value) => {
+        const order = {
+            id: this.state.order_id,
+            reason: value.reason,
+            startTime: new Date(this.state.start),
+            endTime: new Date(this.state.end),
+            doctorId: this.state.selectedDoctor.id,
+        }
+
+        axios
+        .patch('https://final-wcy-backend.herokuapp.com/orders/' + order.id, order, { headers: {
+            jwt: window.sessionStorage.accessToken
+        }})
+        .then(res => {
+            if (res.status === 200) {
+                res.data.startTime = res.data.startTime;
+                res.data.endTime = res.data.endTime;
+                this.props.pushEditedOrder(res.data);
+            }
+        })
+        .catch(err => console.log(err));
+    }
+
+    deleteEvent = () => {
+        axios
+        .delete('https://final-wcy-backend.herokuapp.com/orders/' + this.state.order_id)
+        .then(res => {
+            if(res.status === 200){  
+                console.log(this.state.order_id)
+                this.props.pushRemovedEventId(this.state.order_id);
+            }
+        })
+        .catch(err => console.log(err));
+    }
+
+
     handleChangeStartFormik = date => {
         this.setState({
             start: new Date(date),
@@ -113,7 +161,7 @@ export default class BookingModal extends Component {
     }
 
     render() {
-        const { start, end, selectedDoctor } = this.state;
+        const { reason, start, end, selectedDoctor, isEditing } = this.state;
         const _this = this;
 
         return (
@@ -135,12 +183,12 @@ export default class BookingModal extends Component {
                         <Formik
                             initialValues={{
                                 doctor: selectedDoctor,
-                                reason: null,
+                                reason: reason,
                                 start: start,
                                 end: end
                             }}
                             onSubmit={(values, actions) => {
-                                _this.createOrder(values, actions);
+                                //_this.createOrder(values, actions);
                             }}
                             validationSchema={Yup.object({
                                 reason: Yup.string()
@@ -221,7 +269,19 @@ export default class BookingModal extends Component {
                                             </Form.Group>
                                         </Form.Row>
                                             <Modal.Footer>
-                                                <input type='submit' className='btn btn-primary' value='Đặt bác sĩ'  />
+                                                <div>
+                                                    {(isEditing &&
+                                                        <div>
+                                                            <button onClick={() => _this.editEvent(values)} className='btn btn-success'>Chỉnh sửa</button>
+                                                            <button onClick={() => _this.deleteEvent()} className='btn btn-danger'>Xoá lịch</button>
+                                                        </div>)
+                                                        ||
+                                                        (!isEditing &&
+                                                            <div>
+                                                                <button onClick={() => _this.createOrder(values)} className='btn btn-success'>Tạo mới</button>
+                                                            </div>)
+                                                    }
+                                                </div>
                                                 <Button variant="dark-outline" onClick={_this.props.onHide} >Đóng</Button>
                                             </Modal.Footer>
                                     </Form>
